@@ -1,20 +1,64 @@
 !!!
 %html
   %head
-    %title= 'بسته درجه دو'
+    %title= 'یاقوت کویر'
  
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true 
     = javascript_include_tag "application", "data-turbolinks-track" => true 
     = csrf_meta_tags 
 
   %body
-    %header
-      .language
-        .lan-title= 'LANGUAGE'
-        = link_to (image_tag 'flag/en.png'), locale: :en          
-        = link_to (image_tag 'flag/fa.png'), locale: :fa
-      .menu
-        = render 'shared/menu'
+    #header.skel-layers-fixed
+      .top
+        / Logo
+        #logo
+          %span.image.avatar48
+            = image_tag 'avatar.jpg'
             
-      
-    = yield 
+          %h1#title یاقوت کویر
+          %p Hyperspace Engineer
+        / Nav
+        %nav#nav
+          /
+            Prologue's nav expects links in one of two formats:
+            
+            1. Hash link (scrolls to a different section within the page)
+            
+            <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+            
+            2. Standard link (sends the user to another page/site)
+            
+            <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+          %ul
+            %li
+              %a#top-link.skel-layers-ignoreHref{:href => "#top"}
+                %span.icon.fa-home Intro
+            %li
+              %a#portfolio-link.skel-layers-ignoreHref{:href => "#portfolio"}
+                %span.icon.fa-th Portfolio
+            %li
+              %a#about-link.skel-layers-ignoreHref{:href => "#about"}
+                %span.icon.fa-user About Me
+            %li
+              %a#contact-link.skel-layers-ignoreHref{:href => "#contact"}
+                %span.icon.fa-envelope Contact
+      .bottom
+        / Social Icons
+        %ul.icons
+          %li
+            %a.icon.fa-twitter{:href => "#"}
+              %span.label Twitter
+          %li
+            %a.icon.fa-facebook{:href => "#"}
+              %span.label Facebook
+          %li
+            %a.icon.fa-github{:href => "#"}
+              %span.label Github
+          %li
+            %a.icon.fa-dribbble{:href => "#"}
+              %span.label Dribbble
+          %li
+            %a.icon.fa-envelope{:href => "#"}
+              %span.label Email
+    #main  
+      = yield 
