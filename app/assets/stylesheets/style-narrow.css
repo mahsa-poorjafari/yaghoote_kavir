@@ -87,7 +87,7 @@
 						padding-right: 2.25em;
 					}
 					
-						#nav ul li a span:before
+						#nav ul li a span:after
 						{
 							left: 100%;
 							margin-left: -1.25em;
@@ -100,7 +100,7 @@
 
 	#footer
 	{
-		margin-left: 20%;
+		margin-right: 20%;
 	}
 
 /*********************************************************************************/
@@ -109,5 +109,5 @@
 
 	#main
 	{
-		margin-left: 20%;
+		
 	}

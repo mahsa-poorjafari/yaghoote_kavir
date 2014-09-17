@@ -12,11 +12,11 @@
       .top
         / Logo
         #logo
+          
+          %h1#title یاقوت کویر
+          %p تولیدکننده کودهای کشاورزی
           %span.image.avatar48
             = image_tag 'avatar.jpg'
-            
-          %h1#title یاقوت کویر
-          %p Hyperspace Engineer
         / Nav
         %nav#nav
           /
@@ -32,16 +32,16 @@
           %ul
             %li
               %a#top-link.skel-layers-ignoreHref{:href => "#top"}
-                %span.icon.fa-home Intro
+                %span.icon.fa-home صفحه اصلی
             %li
               %a#portfolio-link.skel-layers-ignoreHref{:href => "#portfolio"}
-                %span.icon.fa-th Portfolio
+                %span.icon.fa-th محصولات
             %li
               %a#about-link.skel-layers-ignoreHref{:href => "#about"}
-                %span.icon.fa-user About Me
+                %span.icon.fa-user درباره ما
             %li
               %a#contact-link.skel-layers-ignoreHref{:href => "#contact"}
-                %span.icon.fa-envelope Contact
+                %span.icon.fa-envelope تماس با ما
       .bottom
         / Social Icons
         %ul.icons
@@ -62,3 +62,11 @@
               %span.label Email
     #main  
       = yield 
+    / Footer
+    #footer
+      / Copyright
+      %ul.copyright
+        %li © Yaghoote Kavir. 
+        %li
+          Design:
+          = link_to 'raush.net', '#'
