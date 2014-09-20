@@ -18,3 +18,9 @@ ul.menu {list-style:none; width:70%; float:right}
 ul.menu li{display:inline}
 
 ul.admin {width:20%; float:right}
+li.admin-menu {font-size:20px;}
+li.admin-menu:hover a{color:#FFFFFF}
+.slide-descript {position: absolute;
+bottom: 5%;}
+.admin-edit-del {position: absolute; top:0; width:50%; background:#E5E5E5; color:#000;}
+.set-center {margin-right:auto; margin-left:auto}

@@ -1,28 +1,12 @@
 / Intro
-%section#top.one.dark.cover
-  .container
-    %header
-      %h2.alt
-        Hi! I'm
-        = succeed "," do
-          %strong Prologue
-        %a{:href => "http://html5up.net/license"} free
-        responsive
-        %br/
-        site template designed by
-        = succeed "." do
-          %a{:href => "http://html5up.net"} HTML5 UP
-      %p
-        Ligula scelerisque justo sem accumsan diam quis
-        %br/
-        vitae natoque dictum sollicitudin elementum.
-    %footer
-      %a.button.scrolly{:href => "#portfolio"} Magna Aliquam
+%section#top{:style => "margin:0; padding:0;"}
+  
+  = render 'slides/slider', :sliders => Slide.all
 / Portfolio
 %section#portfolio.two
   .container
     %header
-      %h2 Portfolio
+      %h2 محصولات 
     %p
       Vitae natoque dictum etiam semper magnis enim feugiat convallis convallis
       egestas rhoncus ridiculus in quis risus amet curabitur tempor orci penatibus.
@@ -66,7 +50,7 @@
 %section#about.three
   .container
     %header
-      %h2 About Me
+      %h2 درباره یاقوت کویر
     %a.image.featured{:href => "#"}
       %img{:alt => "", :src => "images/pic08.jpg"}/
     %p
@@ -80,7 +64,7 @@
 %section#contact.four
   .container
     %header
-      %h2 Contact
+      %h2 تماس با ما
     %p
       Elementum sem parturient nulla quam placerat viverra
       mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia

@@ -11,37 +11,50 @@
     #header.skel-layers-fixed
       .top
         / Logo
-        #logo
-          
+        #logo          
           %h1#title یاقوت کویر
           %p تولیدکننده کودهای کشاورزی
           %span.image.avatar48
             = image_tag 'avatar.jpg'
         / Nav
         %nav#nav
-          /
-            Prologue's nav expects links in one of two formats:
-            
-            1. Hash link (scrolls to a different section within the page)
-            
-            <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-            
-            2. Standard link (sends the user to another page/site)
-            
-            <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
           %ul
-            %li
-              %a#top-link.skel-layers-ignoreHref{:href => "#top"}
-                %span.icon.fa-home صفحه اصلی
-            %li
-              %a#portfolio-link.skel-layers-ignoreHref{:href => "#portfolio"}
-                %span.icon.fa-th محصولات
-            %li
-              %a#about-link.skel-layers-ignoreHref{:href => "#about"}
-                %span.icon.fa-user درباره ما
-            %li
-              %a#contact-link.skel-layers-ignoreHref{:href => "#contact"}
-                %span.icon.fa-envelope تماس با ما
+            - if current_page?('/')
+            
+              %li
+                %a#top-link.skel-layers-ignoreHref{:href => "#top"}
+                  %span.icon.fa-home صفحه اصلی
+              %li
+                %a#portfolio-link.skel-layers-ignoreHref{:href => "#portfolio"}
+                  %span.icon.fa-th محصولات
+              %li
+                %a#about-link.skel-layers-ignoreHref{:href => "#about"}
+                  %span.icon.fa-user درباره ما
+              %li
+                %a#contact-link.skel-layers-ignoreHref{:href => "#contact"}
+                  %span.icon.fa-envelope تماس با ما
+            - else
+            
+              %li
+                = link_to root_url, :class => "skel-layers-ignoreHref", :id => "top-link" do                
+                  %span.icon.fa-home صفحه اصلی
+              %li
+                = link_to products_path , :class => ('active' if current_page?(products_path)), :id => "portfolio-link" do                                
+                  %span.icon.fa-th محصولات
+              -@about = Page.find_by_title('About us')
+              %li  
+                = link_to @about , :class => ('active' if current_page?(@about)), :id => "about-link" do                 
+                  %span.icon.fa-user= @about.title_fa
+              -@contact = Page.find_by_title('Contact us')
+              %li  
+                = link_to @contact , :class => ('active' if current_page?(@contact)), :id => "contact-link" do                 
+                  %span.icon.fa-user= @contact.title_fa
+              
+            - if is_admin?
+              %li
+                %b= 'منوی مدیر سایت'
+              %li.admin-menu
+                = link_to 'مدیریت اسلایدر', slides_path
       .bottom
         / Social Icons
         %ul.icons
@@ -60,7 +73,7 @@
           %li
             %a.icon.fa-envelope{:href => "#"}
               %span.label Email
-    #main  
+    #main.fa  
       = yield 
     / Footer
     #footer
@@ -69,4 +82,4 @@
         %li © Yaghoote Kavir. 
         %li
           Design:
-          = link_to 'raush.net', '#'
+          = link_to 'Raush.net', url_with_protocol('raush.net')
