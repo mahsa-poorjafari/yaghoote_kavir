@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
+//= require jquery_003
+//= require jquery_002
 //= require ckeditor/init
 //= require jquery.min
 //= require jquery.scrolly.min
@@ -19,6 +22,7 @@
 //= require skel.min
 //= require skel-layers.min
 //= require init
+//= require html5shiv
 
 
 

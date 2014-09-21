@@ -3,7 +3,7 @@
   %h2{:style => "position:relative"}= 'تنظیم اندازه تصویر'
   = form_for @slide, :html => {:multipart => true} do |f| 
     %div
-      = image_tag @slide.image.url(:original), :class => "crop cropImage", :height => "500", :width => "965"
+      = image_tag @slide.image.url(:original), :class => "crop cropImage", :height => "695", :width => "965"
       = f.hidden_field :crop_x
       = f.hidden_field :crop_y
       = f.hidden_field :crop_w

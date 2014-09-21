@@ -30,9 +30,9 @@
                 -  sliders.each_with_index do |slide, index|
                   %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
         = link_to "#slider-carousel", :class => "carousel-control left", "data-slide" => "prev" do
-          = image_tag 'next-icon.png', :style => "right:45%"
+          = image_tag 'next-icon.png', :style => "right:45%; margin-top: 100%;"
         = link_to "#slider-carousel", :class => "carousel-control right", "data-slide" => "next" do
-          = image_tag 'prev-icon.png'      
+          = image_tag 'prev-icon.png' , :style => "margin-top: 100%;"     
   
 :javascript 
   $("#slider-carousel .item").first().addClass("active");
