@@ -688,6 +688,7 @@
 	#footer
 	{
 		margin-right: 25%;
+		margin-top: -2%;
 		text-align: center;
 		background-color: #dce3e2;
 		padding: 3em 0 4em 0;
@@ -788,11 +789,12 @@
 		
 			#main > section.three
 			{
-				background-image: url('green_cup.png') ;
-        background-repeat: repeat;
+				background-color: #e8edec;
 			}
 		
 			#main > section.four
 			{
-				background-color: #e8edec;
+				
+        background-image: url('green_cup.png') ;
+        background-repeat: repeat;
 			}

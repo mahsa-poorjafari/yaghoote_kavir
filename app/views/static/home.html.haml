@@ -60,15 +60,5 @@
       جزئیات تماس و شامل شماره های تماس و ایمیل و آدرس در این قسمت قرار می گیرد.
       %br
       نقشه گوگل نیز در این قسمت نمایش داده خواهد شد.
-    %form{:action => "#", :method => "post"}
-      .row.half
-        .6u
-          %input{:name => "name", :placeholder => "Name", :type => "text"}/
-        .6u
-          %input{:name => "email", :placeholder => "Email", :type => "text"}/
-      .row.half
-        .12u
-          %textarea{:name => "message", :placeholder => "Message"}
-      .row
-        .12u
-          %input{:type => "submit", :value => "Send Message"}/
+    .6u  
+      = render 'shared/msg_form'
