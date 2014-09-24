@@ -9,7 +9,8 @@
       .4u
         %article.item
           = link_to product, :class => "image fit" do            
-            = image_tag product.pictures.first.image(:small)
+            - if product.photos.present?
+              = image_tag product.photos.first.image(:small)
           %header
             %h3= product.title_fa
             %p= product.description

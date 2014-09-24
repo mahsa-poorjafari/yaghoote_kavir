@@ -3,9 +3,10 @@
     %header
       %h2= @product.title
     .col-sm-6
-      - @product.pictures.each do |pic|
-        .col-sm-3= image_tag pic.image(:medium)
-      .clear-float 
+      - if @product.photos.present?
+        - @product.photos.each do |pic|
+          .col-sm-3= image_tag pic.image(:medium)
+        .clear-float 
     .col-sm-6    
       = @product.description
   - if is_admin?
