@@ -44,10 +44,10 @@ ul.admin-menu li{line-height:2px; }
 
 
 
-.item:hover a.image{  opacity:1; background-color:#1A8D1A}
-.item:hover a.image img{opacity:.3; position:relative}
-.item a.image img.link-icon{display:none; width:50px; height:50px; position:absolute; top:0; z-index:100}
-.item:hover a.image img.link-icon{display:block; }
-.item:hover {  
+article.item:hover a.image{  opacity:1; background-color:#1A8D1A}
+article.item:hover a.image img{opacity:.3; position:relative}
+article.item a.image img.link-icon{display:none; width:50px; height:50px; position:absolute; top:0; z-index:100}
+article.item:hover a.image img.link-icon{display:block; }
+article.item:hover {  
   margin-top:-10px;
   }
