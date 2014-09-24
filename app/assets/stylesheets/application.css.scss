@@ -20,16 +20,17 @@ ul.menu li{display:inline}
 ul.admin {width:20%; float:right}
 li.admin-menu {font-size:20px;}
 li.admin-menu:hover a{color:#FFFFFF}
-.slide-descript {position: absolute;
-height: 4%;
-top:21.5%;
-text-align:right;
-padding:1%;
-width:965px;
-background-color: #222629;
-color:#fff;
- opacity: 0.8;
-    filter: alpha(opacity=80); /* For IE8 and earlier */
+.slide-descript {
+  position: absolute;
+  height: 4%;
+  top:21.5%;
+  text-align:right;
+  padding:1%;
+  width:965px;
+  background-color: #222629;
+  color:#fff;
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
 
 }
 .admin-edit-del {position: absolute; top:0; width:50%; background:#E5E5E5; color:#000;}
