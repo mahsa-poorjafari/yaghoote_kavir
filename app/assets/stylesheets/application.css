@@ -21,7 +21,19 @@ ul.admin {width:20%; float:right}
 li.admin-menu {font-size:20px;}
 li.admin-menu:hover a{color:#FFFFFF}
 .slide-descript {position: absolute;
-bottom: 5%;}
+bottom: 0;
+height:21.7%;
+text-align:right;
+padding:1%;
+width:100%;
+background-color: #222629;
+color:#fff;
+ opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+
+}
 .admin-edit-del {position: absolute; top:0; width:50%; background:#E5E5E5; color:#000;}
 .set-center {margin-right:auto; margin-left:auto}
 
+section#top {height:680px;}
+ul.admin-menu li{line-height:2px; }

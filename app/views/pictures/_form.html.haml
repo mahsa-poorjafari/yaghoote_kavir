@@ -16,4 +16,4 @@
     = f.label 'محصول مربوطه را انتخاب کنید:'
     = f.select(:product_id, Product.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' محصول را انتخاب کنید.')      
   .actions
-    = f.submit 'Save'
+    = f.submit  "ثبت", :class=> "submit", :id => "contact-submit"

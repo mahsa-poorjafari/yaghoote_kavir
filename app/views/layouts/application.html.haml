@@ -53,8 +53,7 @@
             - if is_admin?
               %li
                 %b= 'منوی مدیر سایت'
-              %li.admin-menu
-                = link_to 'مدیریت اسلایدر', slides_path
+              = render 'shared/admin_menu'
       .bottom
         / Social Icons
         %ul.icons
