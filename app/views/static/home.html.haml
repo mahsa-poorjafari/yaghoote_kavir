@@ -9,15 +9,21 @@
       %h2 محصولات 
     %p
       توضیحات کلی در مورد محصولات در این قسمت قرار می گیرد.
-    .row
+    .row{:style => "direction:rtl"}
+      - Category.all.each do |category|
+        %button.filter{"data-filter" => ".category-" + category.id.to_s}= category.title_fa
+      .clear-float
+    .row#Container
       - Product.all.each do |product|
-        .4u
+        .4u.mix{"data-my-order" => product.id, :class => "category-"+ product.category_id.to_s }
           %article.item
             = link_to product, :class => "image fit" do            
               - if product.photos.present?
                 = image_tag product.photos.first.image(:small)
+                = image_tag 'link-icon.png' , :class => "link-icon"
             %header
               %h3= product.title_fa
+            
         
 / About Me
 %section#about.three
@@ -38,3 +44,8 @@
       نقشه گوگل نیز در این قسمت نمایش داده خواهد شد.
     .6u  
       = render 'shared/msg_form'
+:javascript
+  $(function(){
+    $('#Container').mixItUp();  
+  });
+  

@@ -23,6 +23,9 @@
 //= require skel-layers.min
 //= require init
 //= require html5shiv
+//= require Gruntfile
+//= require jquery.mixitup
+
 
 
 

@@ -12,12 +12,11 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
-
+  html {direction:rtl}
 	body
 	{
 		
-    font-family: 'open_sansregular';
-    
+    font-family: 'open_sansregular';    
     direction:rtl;
     text-align:right;
 	}
@@ -172,6 +171,7 @@
 		article
 		{
 			margin-bottom: 3em;
+      
 		}
 		
 			section > :last-child,
@@ -313,7 +313,7 @@
 			form label
 			{
 				display: block;
-				text-align: left;
+				text-align: right;
 				margin-bottom: 0.5em;
 			}
 		
@@ -726,15 +726,15 @@
 
 	#main
 	{
-		margin-right: 25%;
-    
+		margin-right: 25%;    
     width:75%;
     font-family: 'open_sansregular';
-    
+    min-height:680px;
 	}
 	
 		#main > section
 		{
+      min-height:680px;
 			margin: 0;
 			overflow: hidden;
 			padding: 4em 0;

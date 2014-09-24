@@ -23,7 +23,7 @@ li.admin-menu:hover a{color:#FFFFFF}
 .slide-descript {
   position: absolute;
   height: 4%;
-  top:21.5%;
+  top:21.8%;
   text-align:right;
   padding:1%;
   width:965px;
@@ -38,3 +38,16 @@ li.admin-menu:hover a{color:#FFFFFF}
 
 section#top {height:680px;}
 ul.admin-menu li{line-height:2px; }
+#Container .mix{
+    display: none;
+}
+
+
+
+.item:hover a.image{  opacity:1; background-color:#1A8D1A}
+.item:hover a.image img{opacity:.3; position:relative}
+.item a.image img.link-icon{display:none; width:50px; height:50px; position:absolute; top:0; z-index:100}
+.item:hover a.image img.link-icon{display:block; }
+.item:hover {  
+  margin-top:-10px;
+  }

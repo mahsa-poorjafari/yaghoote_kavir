@@ -5,17 +5,14 @@
         - @category.errors.each do |attr, msg|
           %li= msg
 
-  .field
-    = f.label 'عنوان به انگلیسی:'
-    = f.text_field :title_en
-  .field
-    = f.label 'عنوان به فارسی:'
+  
+    
+  .field.fa
+    = f.label 'عنوان گروه:'
     = f.text_field :title_fa
-  .field
-    = f.label 'توضیحات به انگلیسی:'
-    = f.text_area :description_en
-  .field
-    = f.label 'توضیحات به فارسی:'
+  .field.fa
+    = f.label 'توضیحات :'
     = f.text_area :description_fa
+  
   .actions
     = f.submit 'Save'

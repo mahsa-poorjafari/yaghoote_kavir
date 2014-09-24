@@ -1,19 +1,32 @@
-%section#portfolio.two  
+%section#portfolio.two
   .container
     %header
       %h2 محصولات 
       - if is_admin?
         .contact
           = link_to 'تعریف محصول جدید', new_product_path, :class=> "submit"
-    - @products.each do |product|
-      .4u
-        %article.item
-          = link_to product, :class => "image fit" do            
-            - if product.photos.present?
-              = image_tag product.photos.first.image(:small)
-          %header
-            %h3= product.title_fa
-            %p= product.description
+    .row{:style => "direction:rtl"}
+      - Category.all.each do |category|
+        %button.filter{"data-filter" => ".category-" + category.id.to_s}= category.title_fa
+      .clear-float
+    #Container.row      
+      - @products.each do |product|
+        .4u.mix{"data-my-order" => product.id, :class => "category-"+ product.category_id.to_s }
+          %article.item
+            = link_to product, :class => "image fit" do            
+              - if product.photos.present?
+                = image_tag product.photos.first.image(:small)
+            %header
+              %h3= product.title_fa
+              %p= product.description
+              - if is_admin?
+                = link_to 'ویرایش', edit_product_path(product)
+                \|
+                = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 .clear-float 
 
+:javascript
+  $(function(){
+    $('#Container').mixItUp();  
+  });

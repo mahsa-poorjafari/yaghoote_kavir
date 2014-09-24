@@ -1,7 +1,7 @@
 %section#portfolio.two  
   .container
     %header
-      %h2= @product.title
+      %h2= @product.title_fa
     .col-sm-6
       - if @product.photos.present?
         - @product.photos.each do |pic|
@@ -13,4 +13,6 @@
     = link_to 'ویرایش', edit_product_path(@product)
     \|
     = link_to 'بازگشت', products_path
+    \|
+    = link_to 'افزودن تصویر به محصول', new_photo_path
 .clear-float 

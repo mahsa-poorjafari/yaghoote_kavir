@@ -8,10 +8,13 @@
 
   .field.fa
     = f.label :عنوان
-    = f.text_field :title
+    = f.text_field :title_fa
+  .field.fa
+    = f.label 'گروه مربوطه:'
+    = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' بخش را انتخاب کنید.') 
   .field.fa
     = f.label :توضیحات
-    = f.text_area :description
+    = f.text_area :description_fa
   .actions.fa
     = f.submit  "ثبت", :class=> "submit", :id => "contact-submit"
 .clear-float 

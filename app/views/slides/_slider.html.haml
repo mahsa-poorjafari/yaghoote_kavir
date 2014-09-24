@@ -1,39 +1,24 @@
 -unless sliders.blank?  
   .hero-unit
-    #slider-carousel.carousel.slide
-      .carousel-inner
-        - sliders.each do |slide|
-          .item-row.item          
-            -if is_admin?
-              .row-controls.admin-edit-del.set-center
-                = link_to edit_slide_path(slide) do
-                  %i= 'ویرایش'
-                  \|
-                = link_to  slide, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }  do
-                  %i= 'حذف'
-        
-            = image_tag slide.image(:gallery_size), :id =>  slide.id ,  :class => "slide"
-            
-            .slide-descript.animation-target= 'توضیحات مربوط به هر اسلایدر در این  '
-            %ul.slider-boxes.set-center    
-              - Category.all.each do |category| 
-                = link_to "##{category.title_en}", :class => "item#{category.id}" do
-                  %li.slider-text-box{:style => "float:left"}    
-                    = image_tag category.slider_box(:small)
-                    %br
-                    %b= category.title
-      -if sliders.count > 1          
-        .carousel-controls
-          .center
-            %ol.carousel-indicator-list.carousel-indicators
-              - if  sliders.count != 1
-                -  sliders.each_with_index do |slide, index|
-                  %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
-        = link_to "#slider-carousel", :class => "carousel-control left", "data-slide" => "prev" do
-          = image_tag 'next-icon.png', :style => "right:45%; margin-top: 100%;"
-        = link_to "#slider-carousel", :class => "carousel-control right", "data-slide" => "next" do
-          = image_tag 'prev-icon.png' , :style => "margin-top: 100%;"     
-  
+  .carousel.slide
+    .carousel-inner         
+      - @slides = Slide.all
+      - @slides.each do |slide|
+        .item-row.item
+          = image_tag slide.image(:gallery_size), :id =>  slide.id , :class => "slide", :title => "رنگین کمان_" + slide.image_file_name, :alt =>  "رنگین کمان _" + slide.image_file_name
+          
+              
+    -if @slides.count > 1          
+      .carousel-controls
+        .center
+          %ol.carousel-indicator-list.carousel-indicators
+            -  @slides.each_with_index do |slide, index|
+              %li{"data-slide-to" => "#{index}", "data-target" => "#homeCarousel", :class => "slide-indicator"}      
+      = link_to ".carousel", :class => "carousel-control left", "data-slide" => "prev", :title => "رنگین کمان " do
+        = image_tag 'next-icon.png', :alt => "رنگین کمان " , :title =>  "رنگین کمان " 
+      = link_to ".carousel", :class => "carousel-control right", "data-slide" => "next", :title => "رنگین کمان" do
+        = image_tag 'prev-icon.png', :alt => "رنگین کمان " , :title => "رنگین کمان " 
+      
 :javascript 
   $("#slider-carousel .item").first().addClass("active");
   $("#slider-carousel .slide-indicator").first().addClass("active");
