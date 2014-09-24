@@ -25,6 +25,7 @@ module YaghooteKavir
     config.assets.enabled = true
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     config.assets.precompile += %w( .svg .eot .woff .ttf )
+    Rails.application.config.assets.precompile += %w( jquery.mixitup.js )
   end
   
 end
