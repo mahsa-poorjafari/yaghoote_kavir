@@ -17,4 +17,5 @@
 /public/system/
 /config/secrets.yml
 
+/spec/
 /tmp

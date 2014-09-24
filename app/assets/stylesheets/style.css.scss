@@ -1,4 +1,5 @@
 @charset 'UTF-8';
+@import url("fonts.css.scss");
 @import url("font-awesome.min.css.scss");
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
 
@@ -422,7 +423,7 @@
 					text-align: left;
 					padding: 0.5em 1em 0.5em 1em;
 					color: #fff;
-					background: #222729 url('overlay.png');
+					background: #222729 url(image-path('overlay.png'));
 				}
 			
 				table.default thead
@@ -456,11 +457,11 @@
 			background-color: #8ebebc;
 			border: 0;
 			cursor: pointer;
-			background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url('overlay.png');
-			background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url('overlay.png');
-			background-image: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url('overlay.png');
-			background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url('overlay.png');
-			background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url('overlay.png');			
+			background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url(image-path('overlay.png'));
+			background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url(image-path('overlay.png'));
+			background-image: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url(image-path('overlay.png'));
+			background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url(image-path('overlay.png'));
+			background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url(image-path('overlay.png'));
 			-moz-transition: background-color 0.35s ease-in-out;
 			-webkit-transition: background-color 0.35s ease-in-out;
 			-o-transition: background-color 0.35s ease-in-out;
@@ -779,7 +780,7 @@
 			#main > section.one
 			{
 				background-color: #81918E;
-				background-image: url('banner.jpg');
+				background-image: url(image-path('banner.jpg'));
 			}
 
 			#main > section.two
@@ -795,6 +796,6 @@
 			#main > section.four
 			{
 				
-        background-image: url('green_cup.png') ;
+        background-image: url(image-path('green_cup.png') );
         background-repeat: repeat;
 			}
