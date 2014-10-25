@@ -56,6 +56,7 @@ right:0;
 }
 .row {z-index:0}
 .title {color:#fff;}
+.category_box {width:30%; margin:1%; text-align:center; float:right}
 .category-title {
   margin:1%;
   color:#fff;
@@ -66,6 +67,20 @@ right:0;
 .category-title:hover {cursor:pointer;
   box-shadow: inset 0 0 2em 0 rgba(0,1,0,0.5);		
   box-shadow: inset 0 3px 0 0 rgba(0,0,0,0.5), inset 0 2em 2em 0 rgba(0,0,0,0.5);
+}
+.subgroups-title {border-radius:5px;
+  width:48%;
+  float:right;
+  margin:1%;
+  background: rgba(1,1,0,0.20);
+  box-shadow: inset 0 0 0.25em 0 rgba(0,1,0,0.125);		
+  box-shadow: inset 0 1px 0 0 rgba(0,1,0,0.05), inset 0 0.1em 0.1em 0 rgba(0,1,0,0.025);
+  font-size:15px;
+  }
+.subgroups-title:hover { background:#FFA500;
+  cursor:pointer;
+  box-shadow: inset 0 0 0.25em 0 rgba(0,1,0,0.125);		
+  box-shadow: inset 0 1px 0 0 rgba(0,1,0,0.05), inset 0 0.1em 0.1em 0 rgba(0,1,0,0.025);
 }
 article.item:hover a.image img{opacity:.7; 
 filter: alpha(opacity=70); /* For IE8 and earlier */
@@ -108,7 +123,8 @@ box-shadow: 0px 15px 3px 5px #286628;
   font-size:16px;
   opacity: 0.7;
   filter: alpha(opacity=70); /* For IE8 and earlier */
-  position:relative;
+  position:absolute;
+  color:#fff;
   top:0;
   overflow:hidden;  
    -webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
