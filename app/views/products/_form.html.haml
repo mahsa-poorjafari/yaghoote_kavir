@@ -10,8 +10,8 @@
     = f.label :عنوان
     = f.text_field :title_fa
   .field.fa
-    = f.label 'گروه مربوطه:'
-    = f.select(:category_id, Category.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' بخش را انتخاب کنید.') 
+    = f.label 'زیر گروه مربوطه:'
+    = f.select(:subgroup_id, Subgroup.all.collect {|u| [u.title, u.id]}, :prompt => ' بخش را انتخاب کنید.') 
   .field.fa
     = f.label :توضیحات
     = f.text_area :description_fa

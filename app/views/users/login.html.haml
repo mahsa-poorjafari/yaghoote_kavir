@@ -3,10 +3,10 @@
     %p#notice= notice
     = form_tag create_session_path do 
       .form-group 
-        %span.col-sm-4.lable=" نام کاربری:"
+        %span.lable.fa=" نام کاربری:"
         %span= text_field_tag :user_name, "",:class => "form-control", :placeholder => "نام کاربری را وارد کنید"
       .form-group 
-        %span.col-sm-4.lable=" رمز عبور:"
+        %span.lable.fa=" رمز عبور:"
         %span= password_field_tag :password, "", :class => "form-control", :placeholder => "رمز عبور را وارد کنید" 
         
       .form-group.pull-left

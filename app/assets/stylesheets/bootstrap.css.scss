@@ -929,7 +929,7 @@ img {
 .carousel-inner > .item > a > img {
   display: block;
   width: 100% \9;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 .img-rounded {
@@ -5707,11 +5707,13 @@ button.close {
 }
 .carousel {
   position: relative;
+  height:200px;
 }
 .carousel-inner {
   position: relative;
   width: 100%;
   overflow: hidden;
+  height:200px;
 }
 .carousel-inner > .item {
   position: relative;
@@ -5827,12 +5829,12 @@ button.close {
 }
 .carousel-indicators {
   position: absolute;
-  bottom: 10px;
-  left: 50%;
+  top:0;
+  left: 0;
+  right:0;
   z-index: 15;
-  width: 60%;
-  padding-left: 0;
-  margin-left: -30%;
+  width: 20%;
+  padding-left: 0;  
   text-align: center;
   list-style: none;
 }

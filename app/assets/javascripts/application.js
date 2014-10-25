@@ -17,14 +17,12 @@
 //= require jquery_002
 //= require ckeditor/init
 //= require jquery.min
+//= require html5shiv
+//= require init
 //= require jquery.scrolly.min
 //= require jquery.scrollzer.min
-//= require skel.min
-//= require skel-layers.min
-//= require init
-//= require html5shiv
 //= require Gruntfile
-//= require jquery.mixitup
+
 
 
 

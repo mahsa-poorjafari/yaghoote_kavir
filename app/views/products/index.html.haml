@@ -7,7 +7,9 @@
           = link_to 'تعریف محصول جدید', new_product_path, :class=> "submit"
     .row{:style => "direction:rtl"}
       - Category.all.each do |category|
-        %button.filter{"data-filter" => ".category-" + category.id.to_s}= category.title_fa
+        .category-title.filter{"data-filter" => ".category-" + category.id.to_s}= category.title_fa
+        - category.subgroups.each do |subgroup|
+          .category-title.filter{"data-filter" => ".category-" + category.id.to_s}= subgroup.title
       .clear-float
     #Container.row      
       - @products.each do |product|

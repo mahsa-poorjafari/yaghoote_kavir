@@ -1,4 +1,6 @@
 # encoding: UTF-8
 class Category < ActiveRecord::Base
-  has_many :products
+  extend FriendlyId  
+  friendly_id :title_fa
+  has_many :subgroups
 end

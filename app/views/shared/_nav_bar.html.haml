@@ -1,0 +1,45 @@
+%nav#nav
+  %ul
+    - if current_page?('/')            
+      %li
+        %a#top-link.skel-layers-ignoreHref{:href => "#top"}
+          %span.icon.fa-home صفحه اصلی
+      %li
+        %a#portfolio-link.skel-layers-ignoreHref{:href => "#portfolio"}
+          %span.icon.fa-th محصولات
+      %li
+        = link_to Article, :class => "skel-layers-ignoreHref" do                
+          %span.icon.fa-star مقالات
+      %li
+        = link_to Gallery, :class => "skel-layers-ignoreHref" do                
+          %span.icon.fa-film گالری تصاویر
+      %li
+        %a#about-link.skel-layers-ignoreHref{:href => "#about"}
+          %span.icon.fa-user درباره ما
+      %li
+        %a#contact-link.skel-layers-ignoreHref{:href => "#contact"}
+          %span.icon.fa-envelope تماس با ما
+    - else
+
+      %li
+        = link_to root_url, :class => "skel-layers-ignoreHref", :id => "top-link" do                
+          %span.icon.fa-home صفحه اصلی
+      %li
+        = link_to products_path , :class => ('active' if current_page?(products_path)), :id => "portfolio-link" do                                
+          %span.icon.fa-th محصولات
+      %li
+        = link_to Article, :class => "skel-layers-ignoreHref ", :class =>  ('active' if current_page?(articles_path) ) do                
+          %span.icon.fa-star مقالات
+      %li
+        = link_to Gallery, :class => "skel-layers-ignoreHref ", :class => ('active' if current_page?(galleries_path)) do                
+          %span.icon.fa-film گالری تصاویر
+      -@about = Page.find_by_title('About us')
+      %li  
+        = link_to @about , :class => ('active' if current_page?(@about)), :id => "about-link" do                 
+          %span.icon.fa-user= @about.title_fa
+      -@contact = Page.find_by_title('Contact us')
+      %li  
+        = link_to @contact , :class => ('active' if current_page?(@contact)), :id => "contact-link" do                 
+          %span.icon.fa-user= @contact.title_fa
+      
+   

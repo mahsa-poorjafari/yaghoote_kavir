@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :subgroups
+
+  resources :galleries
+
+  resources :articles
+
   resources :photos
 
   scope "(:locale)", :locale => /en|fa/ do  

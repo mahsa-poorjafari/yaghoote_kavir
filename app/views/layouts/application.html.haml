@@ -1,4 +1,4 @@
-!!!
+!!! 
 %html
   %head
     %title= 'یاقوت کویر'
@@ -9,78 +9,48 @@
     = csrf_meta_tags 
 
   %body
+    .befor-top    
+    .top-site#top
+      / Logo
+      #date
+        = JalaliDate.new(Date.today).strftime("%A %e %b %Y")
+        %br
+        =Date.today.strftime("%A %e %b %Y")
+
+      #logo
+        .image.avatar48
+          = image_tag 'avatar.jpg'
+        %h1#title یاقوت کویر
+        %p تولیدکننده کودهای کشاورزی
+        
+      #search        
+        = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do   
+          .contact-name
+            .google-field= text_field_tag :q, '', placeholder: 'جستجو در گوگل', :id => "contact_name", :class => I18n.locale    
+            .google-submit
+              =submit_tag  'جستجو', :name => "sa", :id => "search-submit" , :class => I18n.locale , :style => "padding:2%;"   
+            .clear-float
+    .clear-float
+    
+    %section#slide{:style => "margin:0; padding:0;"}    
+      = render 'slides/slider', :sliders => Slide.all
     #header.skel-layers-fixed
-      .top
-        / Logo
-        #logo          
-          %h1#title یاقوت کویر
-          %p تولیدکننده کودهای کشاورزی
-          %span.image.avatar48
-            = image_tag 'avatar.jpg'
+      .top        
         / Nav
-        %nav#nav
-          %ul
-            - if current_page?('/')
-            
-              %li
-                %a#top-link.skel-layers-ignoreHref{:href => "#top"}
-                  %span.icon.fa-home صفحه اصلی
-              %li
-                %a#portfolio-link.skel-layers-ignoreHref{:href => "#portfolio"}
-                  %span.icon.fa-th محصولات
-              %li
-                %a#about-link.skel-layers-ignoreHref{:href => "#about"}
-                  %span.icon.fa-user درباره ما
-              %li
-                %a#contact-link.skel-layers-ignoreHref{:href => "#contact"}
-                  %span.icon.fa-envelope تماس با ما
-            - else
-            
-              %li
-                = link_to root_url, :class => "skel-layers-ignoreHref", :id => "top-link" do                
-                  %span.icon.fa-home صفحه اصلی
-              %li
-                = link_to products_path , :class => ('active' if current_page?(products_path)), :id => "portfolio-link" do                                
-                  %span.icon.fa-th محصولات
-              -@about = Page.find_by_title('About us')
-              %li  
-                = link_to @about , :class => ('active' if current_page?(@about)), :id => "about-link" do                 
-                  %span.icon.fa-user= @about.title_fa
-              -@contact = Page.find_by_title('Contact us')
-              %li  
-                = link_to @contact , :class => ('active' if current_page?(@contact)), :id => "contact-link" do                 
-                  %span.icon.fa-user= @contact.title_fa
-              
-            - if is_admin?
-              %li
-                %b= 'منوی مدیر سایت'
-              = render 'shared/admin_menu'
-      - unless is_admin?
-        .bottom
-          / Social Icons
-          %ul.icons
-            %li
-              %a.icon.fa-twitter{:href => "#"}
-                %span.label Twitter
-            %li
-              %a.icon.fa-facebook{:href => "#"}
-                %span.label Facebook
-            %li
-              %a.icon.fa-github{:href => "#"}
-                %span.label Github
-            %li
-              %a.icon.fa-dribbble{:href => "#"}
-                %span.label Dribbble
-            %li
-              %a.icon.fa-envelope{:href => "#"}
-                %span.label Email
+        = render 'shared/nav_bar'
+      
     #main.fa  
       = yield 
     / Footer
     #footer
       / Copyright
       %ul.copyright
-        %li © Yaghoote Kavir. 
+        %li © تمامی حقوق مادی و معنوی این وب سایت متعلق به شرکت یاقوت کویر می باشد.
         %li
-          Design:
-          = link_to 'Raush.net', url_with_protocol('raush.net')
+          Design and Develop:
+          Raush.net
+    -if is_admin?
+      .admin_nav_bar
+        %b= 'منوی مدیر سایت'
+        = render 'shared/admin_menu'
+  

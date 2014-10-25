@@ -1,0 +1,28 @@
+%section#portfolio.two  
+  .container
+    %header
+      %h1 لیست زیرگروه محصولات
+      - if is_admin?
+        .contact
+          = link_to 'تعریف زیرگروه جدید',  new_subgroup_path
+    .12u
+
+      %table
+        %tr
+          %th ردیف
+          %th عنوان گروه
+          %th عنوان زیرگروه
+          %th توضیحات زیرگروه    
+          %th
+
+        - @subgroups.each_with_index do |subgroup, i|
+          %tr
+            %td= (i+1)
+            %td= subgroup.title
+            %td= subgroup.category.title_fa
+            %td= subgroup.description
+            %td
+              = link_to 'مشاهده', subgroup
+              = link_to 'ویرایش', edit_subgroup_path(subgroup)
+              = link_to 'حذف', subgroup, :method => :delete, :data => { :confirm => 'Are you sure?' }
+

@@ -4,36 +4,20 @@
     .container
       %header
         %h2 درباره یاقوت کویر
-      %a.image.featured{:href => "#"}
-        %img{:alt => "", :src => "images/pic08.jpg"}/
+      
       %div= raw @page.text
 - elsif @page.title == "Contact us"
   / Contact
   %section#contact.four
     .container
       %header
-        %h2 تماس با ما
-      %div= raw @page.text
-      %form{:action => "#", :method => "post"}
-        .row.half
-          .6u
-            %input{:name => "name", :placeholder => "Name", :type => "text"}/
-          .6u
-            %input{:name => "email", :placeholder => "Email", :type => "text"}/
-        .row.half
-          .12u
-            %textarea{:name => "message", :placeholder => "Message"}
-        .row
-          .12u
-            %input{:type => "submit", :value => "Send Message"}/
+        %h2= @page.title_fa
+      .6u= raw @page.text
+      .6u  
+        = render 'shared/msg_form'
 
-%p#notice= notice
 
-%h1
-  = @page.title
-%p  
-  =raw @page.text
-
-= link_to 'ویرایش', edit_page_path(@page)
-\|
-= link_to 'بازگشت', :back
+    .admin-links
+      = link_to 'ویرایش', edit_page_path(@page)
+      \|
+      = link_to 'بازگشت', :back

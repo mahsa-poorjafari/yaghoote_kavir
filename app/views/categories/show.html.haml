@@ -5,13 +5,13 @@
 
     %p
       %b عنوان گروه
-      = @category.title_fa
-
+      %span.title= @category.title_fa
     %p
       %b توضیحات
       = @category.description_fa
     - if is_admin?
-
-      = link_to 'ویرایش', edit_category_path(@category)
-      \|
-      = link_to 'بازگشت', categories_path
+      %ul.admin-links
+        %li
+          = link_to 'ویرایش', edit_category_path(@category)
+        %li
+          = link_to 'بازگشت', categories_path

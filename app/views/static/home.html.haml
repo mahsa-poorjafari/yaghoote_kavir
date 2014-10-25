@@ -1,7 +1,5 @@
 / Intro
-%section#top{:style => "margin:0; padding:0;"}
-  
-  = render 'slides/slider', :sliders => Slide.all
+
 / Portfolio
 %section#portfolio.two
   .container
@@ -11,16 +9,16 @@
       توضیحات کلی در مورد محصولات در این قسمت قرار می گیرد.
     .row{:style => "direction:rtl"}
       - Category.all.each do |category|
-        %button.filter{"data-filter" => ".category-" + category.id.to_s}= category.title_fa
+        .category-title.filter{"data-filter" => ".category-" + category.id.to_s}= category.title_fa
       .clear-float
     .row#Container
       - Product.all.each do |product|
         .4u.mix{"data-my-order" => product.id, :class => "category-"+ product.category_id.to_s }
           %article.item
-            = link_to product, :class => "image fit" do            
+            = link_to product, :class => "image fit", :title => product.title_fa do            
               - if product.photos.present?
-                = image_tag product.photos.first.image(:small)
-                = image_tag 'link-icon.png' , :class => "link-icon"
+                = image_tag product.photos.first.image(:small), :alt => product.title_fa, :title => product.title_fa
+                = image_tag 'link-icon.png' , :class => "link-icon", :alt => product.title_fa, :title => product.title_fa
             %header
               %h3= product.title_fa
             
@@ -29,8 +27,7 @@
 %section#about.three
   .container
     %header
-      %h2 درباره یاقوت کویر
-    
+      %h2 درباره یاقوت کویر    
     %p
       متن معرفی و تاریخچه و هر آنچه نیاز درباره مجموعه گفته شود در این قسمت قرار می گیرد.
 / Contact
@@ -44,6 +41,7 @@
       نقشه گوگل نیز در این قسمت نمایش داده خواهد شد.
     .6u  
       = render 'shared/msg_form'
+      
 :javascript
   $(function(){
     $('#Container').mixItUp();  

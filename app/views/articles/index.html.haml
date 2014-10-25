@@ -1,0 +1,30 @@
+%section#portfolio.two  
+  .container
+    %header
+      %h1 لیست مقالات
+      - if is_admin?
+        = link_to 'مقاله جدید', new_article_path, :class=> "submit"
+    .12u
+      %table
+        %tr
+          %th ردیف
+          %th عنوان مقاله    
+          %th نویسنده
+          %th
+          
+
+        - @articles.each_with_index do |article, i|
+          %tr
+            %td= (i+1)
+            %td= article.title      
+            %td= article.author
+            - if is_admin?
+              %td
+                = link_to 'مشاهده', article
+                \|
+                = link_to 'ویرایش', edit_article_path(article)
+                \|
+                = link_to 'حذف', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+
