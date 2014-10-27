@@ -86,18 +86,6 @@ ActiveRecord::Schema.define(version: 20141021115210) do
     t.datetime "image_updated_at"
   end
 
-  create_table "pictures", force: true do |t|
-    t.string   "description_en"
-    t.string   "description_fa"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
   create_table "products", force: true do |t|
     t.string   "title"
     t.text     "description"

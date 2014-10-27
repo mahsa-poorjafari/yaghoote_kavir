@@ -24,7 +24,7 @@ li.admin-menu:hover a{color:#FFFFFF}
   position: absolute;
   height: 50px;
   bottom:0;
-  text-align:right;  
+  text-align:right;
   width:100%;
   background-color: #222629;
   color:#fff;
@@ -32,20 +32,20 @@ li.admin-menu:hover a{color:#FFFFFF}
   filter: alpha(opacity=50); /* For IE8 and earlier */
 
 }
-.admin-edit-del {position: absolute; top:0; width:50%; background:#E5E5E5; color:#000; left:0}
+.admin-edit-del {position: absolute; top:0;  background:#E5E5E5; color:#000; left:0}
 .set-center {margin-right:auto; margin-left:auto}
 
 section#slide {height:200px;
 position:absolute;
-top: 110px;
+top: 10px;
 width: 100%;
 z-index:100;
 left:0;
 right:0;
 }
-#nav ul.admin-menu, ul.admin-links {background:#1A1A1A; 
+#nav ul.admin-menu, ul.admin-links {background:#1A1A1A;
   background: rgba(0,0,0,0.50);
-  box-shadow: inset 0 0 0.25em 0 rgba(0,0,0,0.125);		
+  box-shadow: inset 0 0 0.25em 0 rgba(0,0,0,0.125);
   box-shadow: inset 0 1px 0 0 rgba(0,0,0,0.05), inset 0 0.1em 0.1em 0 rgba(0,0,0,0.025);
 }
 #nav ul.admin-menu li, ul.admin-links li{line-height:1.5em; font-size:20px; text-align:center }
@@ -62,10 +62,10 @@ right:0;
   color:#fff;
   border-radius:5px;
   background: rgba(0,1,0,0.50);
-  box-shadow: inset 0 0 0.25em 0 rgba(0,1,0,0.125);		
+  box-shadow: inset 0 0 0.25em 0 rgba(0,1,0,0.125);
   box-shadow: inset 0 1px 0 0 rgba(0,1,0,0.05), inset 0 0.1em 0.1em 0 rgba(0,1,0,0.025);}
 .category-title:hover {cursor:pointer;
-  box-shadow: inset 0 0 2em 0 rgba(0,1,0,0.5);		
+  box-shadow: inset 0 0 2em 0 rgba(0,1,0,0.5);
   box-shadow: inset 0 3px 0 0 rgba(0,0,0,0.5), inset 0 2em 2em 0 rgba(0,0,0,0.5);
 }
 .subgroups-title {border-radius:5px;
@@ -73,16 +73,16 @@ right:0;
   float:right;
   margin:1%;
   background: rgba(1,1,0,0.20);
-  box-shadow: inset 0 0 0.25em 0 rgba(0,1,0,0.125);		
+  box-shadow: inset 0 0 0.25em 0 rgba(0,1,0,0.125);
   box-shadow: inset 0 1px 0 0 rgba(0,1,0,0.05), inset 0 0.1em 0.1em 0 rgba(0,1,0,0.025);
   font-size:15px;
   }
 .subgroups-title:hover { background:#FFA500;
   cursor:pointer;
-  box-shadow: inset 0 0 0.25em 0 rgba(0,1,0,0.125);		
+  box-shadow: inset 0 0 0.25em 0 rgba(0,1,0,0.125);
   box-shadow: inset 0 1px 0 0 rgba(0,1,0,0.05), inset 0 0.1em 0.1em 0 rgba(0,1,0,0.025);
 }
-article.item:hover a.image img{opacity:.7; 
+article.item:hover a.image img{opacity:.7;
 filter: alpha(opacity=70); /* For IE8 and earlier */
 position:relative}
 article.item a.image img.link-icon{display:none; width:50px; height:50px;
@@ -97,20 +97,21 @@ article.item:hover header{background:#1A1A1A; color:#fff;}
 span.lable {color:#000}
 .admin-links {background:#174517; color:#fff;}
 .admin-links a:hover{color:#FFA500}
-#date {font-size:15px; color:#fff; width:30%; float:right; text-align:center;
+#date {font-size:15px; color:#fff; width:70%; float:right; text-align:right;
   position:relative; top:0;
+  padding-right:5%;
 }
-#search {font-size:15px; color:#fff; text-align:center;width:30%; float:right; left:0; position:absolute; top:0;
-height:150px;
+#search {font-size:15px; color:#fff; text-align:left;width:30%; float:right; left:0; position:relative;
+
 }
 .google-field {width:300px; float:right; height:50px;}
 .google-submit {width:20px; float:right;}
 .top-site {
-  
+
   width:100%;  position: relative; right:0; left:0; height:200px;
-  
-  text-align:center;  
-  
+
+  text-align:center;
+
 }
 .befor-top {width:100%; height:10px; background:#FFA500;
 position: relative; top:0; right:0; left:0;
@@ -119,14 +120,14 @@ box-shadow: 0px 15px 3px 5px #286628;
   z-index:100;
   box-shadow: inset 0 0 0.25em 0 rgba(0, 0, 0, 0.125);
 }
-.admin_nav_bar {width:20%; height:30px; background:#1A1A1A; 
+.admin_nav_bar {width:20%; height:30px; background:#1A1A1A;
   font-size:16px;
   opacity: 0.7;
   filter: alpha(opacity=70); /* For IE8 and earlier */
   position:absolute;
   color:#fff;
   top:0;
-  overflow:hidden;  
+  overflow:hidden;
    -webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
     transition: height 1s;
   z-index:300;
@@ -135,3 +136,5 @@ box-shadow: 0px 15px 3px 5px #286628;
 .admin_nav_bar:hover {height:400px;}
 
 .contact-name {padding:2%}
+.slider_edit_box {width:1286px; height:200px;}
+.google-field input[type="text"] {background:#FFA500; color:#000; height:20px; width:90%}
