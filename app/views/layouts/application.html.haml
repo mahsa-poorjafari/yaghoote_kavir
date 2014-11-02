@@ -1,46 +1,47 @@
-!!! 
+!!!
 %html
   %head
     %title= 'یاقوت کویر'
- 
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true 
-    = javascript_include_tag "application", "data-turbolinks-track" => true 
+
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "jquery.mixitup"
-    = csrf_meta_tags 
+    = csrf_meta_tags
 
   %body
-    .befor-top    
+    .befor-top
     .top-site#top
       / Logo
-      #date
-        = JalaliDate.new(Date.today).strftime("%A %e %b %Y")
-        %br
-        =Date.today.strftime("%A %e %b %Y")
-
       #logo
         .image.avatar48
           = image_tag 'avatar.jpg'
         %h1#title یاقوت کویر
         %p تولیدکننده کودهای کشاورزی
-        
-      #search        
-        = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do   
-          .contact-name
-            .google-field= text_field_tag :q, '', placeholder: 'جستجو در گوگل', :id => "contact_name", :class => I18n.locale    
-            .google-submit
-              =submit_tag  'جستجو', :name => "sa", :id => "search-submit" , :class => I18n.locale , :style => "padding:2%;"   
-            .clear-float
+
     .clear-float
-    
-    %section#slide{:style => "margin:0; padding:0;"}    
+
+    %section#slide{:style => "margin:0; padding:0;"}
       = render 'slides/slider', :sliders => Slide.all
+    %div
+      #date
+        = JalaliDate.new(Date.today).strftime("%A %e %b %Y")
+        |
+        =Date.today.strftime("%A %e %b %Y")
+      #search
+        = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
+          .search_on_google
+            .google-field= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale
+            .google-submit
+              =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale
+
+      .clear-float
     #header.skel-layers-fixed
-      .top        
+      .top
         / Nav
         = render 'shared/nav_bar'
-      
-    #main.fa  
-      = yield 
+
+    #main.fa
+      = yield
     / Footer
     #footer
       / Copyright
@@ -53,4 +54,4 @@
       .admin_nav_bar
         %b= 'منوی مدیر سایت'
         = render 'shared/admin_menu'
-  
+
