@@ -9,30 +9,32 @@
     = csrf_meta_tags
 
   %body
-    .befor-top
+    
     .top-site#top
+      #date
+        = JalaliDate.new(Date.today).strftime("%A %e %b %Y")
+        |
+        =Date.today.strftime("%A %e %b %Y")
       / Logo
       #logo
         .image.avatar48
           = image_tag 'avatar.jpg'
         %h1#title یاقوت کویر
         %p تولیدکننده کودهای کشاورزی
-
-    .clear-float
-
-    %section#slide{:style => "margin:0; padding:0;"}
-      = render 'slides/slider', :sliders => Slide.all
-    %div
-      #date
-        = JalaliDate.new(Date.today).strftime("%A %e %b %Y")
-        |
-        =Date.today.strftime("%A %e %b %Y")
+        
+     
       #search
         = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
           .search_on_google
             .google-field= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale
             .google-submit
               =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale
+
+
+    .clear-float
+
+    %section#slide{:style => "margin:0; padding:0;"}
+      = render 'slides/slider', :sliders => Slide.all
 
       .clear-float
     #header.skel-layers-fixed

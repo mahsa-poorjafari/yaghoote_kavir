@@ -1,21 +1,25 @@
-%h1 Listing galleries
+%section#portfolio.two  
+  .container
+    %header
+      %h1 گالری تصاویر
+      - if is_admin?
+        = link_to 'افزودن تصویر به گالری', new_gallery_path, :class=> "submit"
+    .12u
+      %table
+        %tr
+          %th عنوان 
+          %th Description          
+          %th
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th
-    %th
-    %th
+        - @galleries.each do |gallery|
+          %tr
+            %td= gallery.title
+            %td= gallery.description
+            - if is_admin?
+              %td
+                = link_to 'Show', gallery
+                \|
+                = link_to 'Edit', edit_gallery_path(gallery)
+                \|
+                = link_to 'Destroy', gallery, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-  - @galleries.each do |gallery|
-    %tr
-      %td= gallery.title
-      %td= gallery.description
-      %td= link_to 'Show', gallery
-      %td= link_to 'Edit', edit_gallery_path(gallery)
-      %td= link_to 'Destroy', gallery, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Gallery', new_gallery_path

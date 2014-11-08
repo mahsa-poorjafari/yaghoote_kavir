@@ -35,14 +35,17 @@ li.admin-menu:hover a{color:#FFFFFF}
 .admin-edit-del {position: absolute; top:0;  background:#E5E5E5; color:#000; left:0}
 .set-center {margin-right:auto; margin-left:auto}
 
-section#slide {height:200px;
-position:absolute;
-top: 10px;
+section#slide {height:290px;
+position:relative;
+top: 7%;
 width: 100%;
 z-index:100;
 left:0;
 right:0;
 }
+.hero-unit {height:100%}
+.carousel {height:100%}
+.carousel-inner {height:100%}
 #nav ul.admin-menu, ul.admin-links {background:#1A1A1A;
   background: rgba(0,0,0,0.50);
   box-shadow: inset 0 0 0.25em 0 rgba(0,0,0,0.125);
@@ -97,7 +100,7 @@ article.item:hover header{background:#1A1A1A; color:#fff;}
 span.lable {color:#000}
 .admin-links {background:#174517; color:#fff;}
 .admin-links a:hover{color:#FFA500}
-#date {font-size:15px; color:#fff; width:70%; float:right; text-align:right;
+#date {font-size:15px; color:#092509; width:70%; float:right; text-align:right;
   position:relative; top:0;
   padding-right:5%;
 }
@@ -109,10 +112,11 @@ float: right;
 height: 50px;}
 .google-submit {width:20px; float:right;}
 .top-site {
-
-  width:100%;  position: relative; right:0; left:0; height:200px;
-
+  background-image: url(image-path('bg.png'));  
+  background-repeat:no-repeat;
+  width:100%;  position: fixed; right:0; left:0; height:130px;
   text-align:center;
+  z-index:200;
 
 }
 .befor-top {width:100%; height:10px; background:#FFA500;
