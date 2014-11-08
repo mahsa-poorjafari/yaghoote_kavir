@@ -211,7 +211,10 @@
       .image img
       {
         display: block;
-        width: 100%;
+        width: 70%;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
       }
 
       .image.avatar48
@@ -232,6 +235,7 @@
         display: block;
         width: 100%;
         position:relative;
+        background: #fff;
       }
 
       .image.featured
