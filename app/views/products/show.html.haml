@@ -7,8 +7,8 @@
     .col-sm-12
       - if @product.photos.present?
         - @product.photos.each do |pic|
-          .col-sm-5
-            = image_tag pic.image(:medium), :alt => @product.title_fa + '_' + pic.image_file_name, :title => @product.title_fa + '_' + pic.description
+          .col-sm-4
+            = image_tag pic.image(:medium), :alt => @product.title_fa + '_' + pic.image_file_name, :title => @product.title_fa + '_' + pic.description, :style => "width:100%"
             = pic.description
         .clear-float 
     
