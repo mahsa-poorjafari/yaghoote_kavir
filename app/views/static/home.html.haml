@@ -10,7 +10,7 @@
     .row{:style => "direction:rtl"}
       - Category.all.each do |category|
         .category_box
-          .category-title{:id => ".category-" + category.id.to_s}
+          .category-title{:id => "category-" + category.id.to_s}
             = category.title_fa
           - category.subgroups.each do |subgroup|
             .subgroups-title.filter{"data-filter" => ".category-" + category.id.to_s}= subgroup.title
@@ -19,7 +19,7 @@
         - Category.all.each do |category|
           - category.subgroups.each do |subgroup|
             - subgroup.products.each do |product|
-              .4u.mix{"data-my-order" => product.id, :class => "category-" + product.subgroup.id.to_s }
+              .4u.mix{"data-my-order" => product.id, :class => "category-" + product.subgroup.category.id.to_s }
                 %article.item
                   = link_to product, :class => "image fit" do            
                     - if product.photos.present?
