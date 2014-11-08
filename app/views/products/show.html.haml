@@ -2,13 +2,16 @@
   .container
     %header
       %h2= @product.title_fa
-    .col-sm-6
-      - if @product.photos.present?
-        - @product.photos.each do |pic|
-          .col-sm-3= image_tag pic.image(:medium), :alt => @product.title_fa, :title => @product.title_fa
-        .clear-float 
     .col-sm-6    
       = @product.description
+    .col-sm-12
+      - if @product.photos.present?
+        - @product.photos.each do |pic|
+          .col-sm-5
+            = image_tag pic.image(:medium), :alt => @product.title_fa + '_' + pic.image_file_name, :title => @product.title_fa + '_' + pic.description
+            = pic.description
+        .clear-float 
+    
   - if is_admin?
     = link_to 'ویرایش', edit_product_path(@product)
     \|
