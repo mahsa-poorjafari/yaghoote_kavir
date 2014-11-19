@@ -10,6 +10,9 @@
           .col-sm-4
             = image_tag pic.image(:medium), :alt => @product.title_fa + '_' + pic.image_file_name, :title => @product.title_fa + '_' + pic.description, :style => "width:100%"
             = pic.description
+            = link_to 'ویرایش تصویر', edit_photo_path(pic)
+            \|
+            = link_to 'حذف تصویر', pic, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
         .clear-float 
     
   - if is_admin?

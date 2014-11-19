@@ -1,21 +1,34 @@
-%h1 Listing photos
+%section#portfolio.two
+  .container
+    %header      
+      %h2 لیست تصاویر محصولات
+      = link_to 'افزودن تصویر جدید', new_photo_path
 
-%table
-  %tr
-    %th Description
-    %th Product
-    %th
-    %th
-    %th
+    %table
+      %tr
+        %th ردیف
+        %th توضیحات
+        %th محصول مربوطه
+        %th تصویر        
+        %th
 
-  - @photos.each do |photo|
-    %tr
-      %td= photo.description
-      %td= photo.product_id
-      %td= link_to 'Show', photo
-      %td= link_to 'Edit', edit_photo_path(photo)
-      %td= link_to 'Destroy', photo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - @photos.each_with_index do |photo, i|
+        %tr
+          %td= (i+1)
+          %td= photo.description
+          %td 
+            - if photo.product_id.present?
+              = photo.product.title_fa
+            
+          %td= image_tag photo.image(:small)
+          %td
+            - if is_admin?
+              = link_to 'مشاهده', photo
+              \|
+              = link_to 'ویرایش', edit_photo_path(photo)
+              \|
+              = link_to 'حذف', photo, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
 
-%br
 
-= link_to 'New Photo', new_photo_path
+
+   
