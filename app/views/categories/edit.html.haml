@@ -1,7 +1,10 @@
-%h1 Editing category
+%section  
+  .container
+    %header   
+      %h1= 'ویرایش گروه محصول  ' +  @category.title
 
-= render 'form'
-
-= link_to 'Show', @category
-\|
-= link_to 'Back', categories_path
+    = render 'form'
+    - if is_admin?
+      = link_to 'ویرایش', @category
+      \|
+      = link_to 'بازگشت', :back

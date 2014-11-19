@@ -13,6 +13,8 @@
     = f.text_field :title
   .field
     = f.label 'تصویر:'
+    - if @photo.image.present?
+      = image_tag @photo.image(:small)
     = f.file_field :image
   .field
     = f.label 'توضیحات:'

@@ -1,7 +1,10 @@
-%h1 Editing photo
+%section  
+  .container
+    %header
+      %h1= 'ویرایش ریزمحصول ' + @photo.title
 
-= render 'form'
-
-= link_to 'Show', @photo
-\|
-= link_to 'Back', photos_path
+      = render 'form'
+    - if is_admin?
+        = link_to 'ویرایش', @photo
+        \|
+        = link_to 'بازگشت', :back
