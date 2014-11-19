@@ -7,7 +7,7 @@
     %table
       %tr
         %th ردیف
-        %th توضیحات
+        %th عنوان
         %th محصول مربوطه
         %th تصویر        
         %th
@@ -15,7 +15,7 @@
       - @photos.each_with_index do |photo, i|
         %tr
           %td= (i+1)
-          %td= photo.description
+          %td= photo.title
           %td 
             - if photo.product_id.present?
               = photo.product.title_fa

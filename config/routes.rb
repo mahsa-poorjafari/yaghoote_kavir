@@ -7,22 +7,21 @@ Rails.application.routes.draw do
   resources :articles
 
   resources :photos
+  
+  resources :pictures
 
-  scope "(:locale)", :locale => /en|fa/ do  
-    resources :pictures
+  resources :messages
 
-    resources :messages
+  resources :categories
+  
+  resources :products
 
-    resources :categories
-    
-    resources :products
+  resources :slides
 
-    resources :slides
+  resources :users
 
-    resources :users
+  resources :pages
 
-    resources :pages
-  end
   mount Ckeditor::Engine => '/ckeditor'
   get "static/home"
   root :to => 'static#home'

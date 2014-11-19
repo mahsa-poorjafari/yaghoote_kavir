@@ -1,7 +1,8 @@
 %section  
   .container
     %header
-      %h1= 'ویرایش ریزمحصول ' + @photo.title
+      - if @photo.title.present?
+        %h1= 'ویرایش محصول ' + @photo.title + ' از زیرگروه ' + @photo.product.title_fa
 
       = render 'form'
     - if is_admin?
