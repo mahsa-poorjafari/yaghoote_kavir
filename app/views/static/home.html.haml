@@ -15,11 +15,11 @@
           - category.subgroups.each do |subgroup|
             .subgroups-title.filter{"data-filter" => ".category-" + subgroup.id.to_s}= subgroup.title
         
-      #Container.row{:style => "width:100%"}
+      #Container{:style => "width:100%"}
         - Category.all.each do |category|
           - category.subgroups.each do |subgroup|
             - subgroup.products.each do |product|
-              .3u.mix.product-box{"data-my-order" => product.id, :class => "category-" + product.subgroup.id.to_s }
+              .mix.product-box{"data-my-order" => product.id, :class => "category-" + product.subgroup.id.to_s }
                 %article.item
                   = link_to product, :class => "image fit" do            
                     - if product.photos.present?
