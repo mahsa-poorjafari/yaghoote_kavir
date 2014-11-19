@@ -191,7 +191,7 @@
       section:last-child,
       article:last-child
       {
-        margin-bottom: 0;
+        margin-bottom: 10%;
       }
 
       .row > section,
@@ -236,6 +236,8 @@
         width: 100%;
         position:relative;
         background: #fff;
+        height: 150px;
+        overflow: hidden;
       }
 
       .image.featured
@@ -501,7 +503,7 @@
     .item
     {
       box-shadow: 0 0.05em 0.15em 0 rgba(0,0,0,0.05);
-
+      
       height:100%;
     }
 
