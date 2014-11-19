@@ -3,13 +3,14 @@
     %header      
       %span= link_to @photo.product.subgroup.title , :controller => "subgroups", :action => "show", :id => @photo.product.subgroup.title 
       %span= ' / '
-      %span= link_to @photo.product.title_fa,  :controller => "products", :action => "show", :id => @photo.product.title_fa
+      - if @photo.product.title_fa.present?
+        %span= link_to @photo.product.title_fa,  :controller => "products", :action => "show", :id => @photo.product.title_fa
       %h2= @photo.title 
     .col-sm-12
       .col-sm-4{:style => "overflow:hidden"}   
         = image_tag @photo.image(:medium)
       .col-sm-8.sub-pro-description
-        =raw @photo.description
+        =raw @photo.description_fa
     .col-sm-12
       - if is_admin?
         = link_to 'ویرایش', edit_photo_path(@photo)
