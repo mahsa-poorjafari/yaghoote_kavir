@@ -171,4 +171,8 @@ margin-right:2%;
 overflow: hidden;
 width:22%;
 position: relative;}
-.sub-pro-description {text-align:justify; }
+.sub-pro-box {position:relative; height:450px; overflow:hidden}
+.sub-pro-description {text-align:justify; font-size:18px}
+.sub-pro-title {text-align:center; }
+.sub-pro-img {border:#4D4D4D solid 1px; border-radius:5px; background:#fff }
+.sub-pro-box:hover .sub-pro-img {background:#FFFF58; opacity:.8; cursor:pointer}

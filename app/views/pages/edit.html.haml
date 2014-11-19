@@ -1,10 +1,10 @@
 %section  
   .container
     %header
-      %h1= ' ویرایش صفحه' + @page.title_fa
+      %h1= ' ویرایش صفحه ' + @page.title_fa
 
     = render 'form'
     -if is_admin?
-      = link_to 'Show', @page
+      = link_to 'مشاهده', @page
       \|
-      = link_to 'Back', :back
+      = link_to 'بازگشت', :back

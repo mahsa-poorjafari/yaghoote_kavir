@@ -1,23 +1,26 @@
 %section#portfolio.two  
   .container
-    %header
+    %header      
+      %span= link_to @product.subgroup.title, @product.subgroup.title      
       %h2= @product.title_fa
     .col-sm-6    
       = @product.description
     .col-sm-12
       - if @product.photos.present?
         - @product.photos.offset(1).each do |pic|
-          .col-sm-12
-            .col-sm-4
-              = image_tag pic.image(:medium), :alt => @product.title_fa + '_' + pic.image_file_name, :title => @product.title_fa + '_' + pic.description, :style => "width:100%"
-            .col-sm-7
-              .sub-pro-description= pic.description
-            - if is_admin?
-              .col-sm-1
-                = link_to 'ویرایش تصویر', edit_photo_path(pic)
-                \|
-                = link_to 'حذف تصویر', pic, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
-            .clear-float 
+          = link_to pic do
+            .col-sm-4.sub-pro-box
+              .col-sm-12
+                .sub-pro-title= pic.title
+              .col-sm-12.sub-pro-img
+                = image_tag pic.image(:small), :alt => @product.title_fa + '_' + pic.title, :title => @product.title_fa + '_' + pic.title, :style => "width:100%"
+              
+              - if is_admin?
+                .col-sm-12
+                  = link_to 'ویرایش ', edit_photo_path(pic)
+                  \|
+                  = link_to 'حذف', pic, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+              .clear-float 
           .clear-float 
     
   - if is_admin?

@@ -1,17 +1,17 @@
 %section#portfolio.two  
   .container
-    %header
-      %p#notice= notice
-      %p
-        %b نام محصول
-        = @photo.product.title_fa
-    %p
-      = image_tag @photo.image(:medium)
-    %p
-      %b توضیحات
-      = @photo.description
-    
-    - if is_admin?
-      = link_to 'ویرایش', edit_photo_path(@photo)
-      \|
-      = link_to 'بازگشت', Product
+    %header      
+      %span= link_to @photo.product.subgroup.title , @photo.product.subgroup.title
+      %span= ' / '
+      %span= link_to @photo.product.title_fa , @photo.product.title_fa
+      %h2= @photo.title 
+    .col-sm-12
+      .col-sm-4{:style => "overflow:hidden"}   
+        = image_tag @photo.image(:medium)
+      .col-sm-8.sub-pro-description
+        =raw @photo.description
+    .col-sm-12
+      - if is_admin?
+        = link_to 'ویرایش', edit_photo_path(@photo)
+        \|
+        = link_to 'بازگشت', Product
