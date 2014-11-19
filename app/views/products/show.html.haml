@@ -4,29 +4,30 @@
       %span= link_to @product.subgroup.title, :controller => "subgroups", :action => "show", :id => @product.subgroup.title
       %h2= @product.title_fa
     .col-sm-6    
-      = @product.description
+      =raw @product.description
     .col-sm-12
       - if @product.photos.present?
-        - @product.photos.offset(1).each do |pic|
-          = link_to pic do
-            .col-sm-4.sub-pro-box
-              .col-sm-12
-                .sub-pro-title= pic.title
-              .col-sm-12.sub-pro-img
-                = image_tag pic.image(:small), :alt => @product.title_fa + '_' + pic.title, :title => @product.title_fa + '_' + pic.title, :style => "width:100%"
-              
-              - if is_admin?
+        - if @product.photos.offset(1).present?
+          - @product.photos.offset(1).each do |pic|
+            = link_to pic do
+              .col-sm-4.sub-pro-box
                 .col-sm-12
-                  = link_to 'ویرایش ', edit_photo_path(pic)
-                  \|
-                  = link_to 'حذف', pic, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
-              .clear-float 
-          .clear-float 
+                  .sub-pro-title= pic.title
+                .col-sm-12.sub-pro-img
+                  = image_tag pic.image(:small), :alt => @product.title_fa + '_' + pic.title, :title => @product.title_fa + '_' + pic.title, :style => "width:100%"
+                
+                - if is_admin?
+                  .col-sm-12
+                    = link_to 'ویرایش ', edit_photo_path(pic)
+                    \|
+                    = link_to 'حذف', pic, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+                .clear-float 
+            .clear-float 
     
   - if is_admin?
     = link_to 'ویرایش', edit_product_path(@product)
     \|
-    = link_to 'بازگشت', products_path
+    = link_to 'بازگشت', :back
     \|
     = link_to 'افزودن تصویر به محصول', new_photo_path
 .clear-float 

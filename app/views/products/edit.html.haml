@@ -1,7 +1,8 @@
 %section  
   .container
     %header     
-      %h1= 'ویرایش محصول ' + @product.title
+      %span= @product.subgroup.title
+      %h1= 'ویرایش محصول ' + @product.title_fa
 
     = render 'form'
     - if is_admin?
