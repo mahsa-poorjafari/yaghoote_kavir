@@ -1,8 +1,7 @@
 %section#portfolio.two  
   .container
     %header      
-      %span= link_to @photo.product.subgroup.title , :controller => "subgroups", :action => "show", :id => @photo.product.subgroup.title 
-      %span= ' / '
+      %span= link_to @photo.product.subgroup.title , :controller => "subgroups", :action => "show", :id => @photo.product.subgroup.title       
       - if @photo.product.title_fa.present?
         %span= link_to @photo.product.title_fa,  :controller => "products", :action => "show", :id => @photo.product.title_fa
       %h2= @photo.title 
