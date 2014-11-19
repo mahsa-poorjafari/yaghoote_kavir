@@ -4,7 +4,7 @@
       %span= link_to @product.subgroup.title, :controller => "subgroups", :action => "show", :id => @product.subgroup.title
       %h2= @product.title_fa
     .col-sm-6    
-      =raw @product.description
+      =raw @product.description_fa
     .col-sm-12
       - if @product.photos.present?
         - if @product.photos.offset(1).present?
