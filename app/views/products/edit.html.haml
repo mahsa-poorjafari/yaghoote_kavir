@@ -1,7 +1,10 @@
-%h1 Editing product
+%section  
+  .container
+    %header     
+      %h1= 'ویرایش محصول ' + @product.title
 
-= render 'form'
-
-= link_to 'Show', @product
-\|
-= link_to 'Back', products_path
+    = render 'form'
+    - if is_admin?
+      = link_to 'مشاهده', @product
+      \|
+      = link_to 'بازگشت', :back

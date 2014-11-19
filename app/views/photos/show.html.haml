@@ -1,9 +1,9 @@
 %section#portfolio.two  
   .container
     %header      
-      %span= link_to @photo.product.subgroup.title , @photo.product.subgroup.title
+      %span= link_to @photo.product.subgroup.title , :controller => "subgroups", :action => "show", :id => @photo.product.subgroup.title 
       %span= ' / '
-      %span= link_to @photo.product.title_fa , @photo.product.title_fa
+      %span= link_to @photo.product.title_fa,  :controller => "products", :action => "show", :id => @photo.product.title_fa
       %h2= @photo.title 
     .col-sm-12
       .col-sm-4{:style => "overflow:hidden"}   

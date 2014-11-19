@@ -1,7 +1,7 @@
 %section#portfolio.two  
   .container
     %header      
-      %span= link_to @product.subgroup.title, @product.subgroup.title      
+      %span= link_to @product.subgroup.title, :controller => "subgroups", :action => "show", :id => @product.subgroup.title
       %h2= @product.title_fa
     .col-sm-6    
       = @product.description

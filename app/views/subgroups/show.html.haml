@@ -1,12 +1,28 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = @subgroup.title
-%p
-  %b Description:
-  = @subgroup.description
-
-= link_to 'Edit', edit_subgroup_path(@subgroup)
-\|
-= link_to 'Back', subgroups_path
+%section#portfolio.two  
+  .container
+    %header    
+      %Span= link_to @subgroup.category.title_fa,  :controller => "static", :action => "home"
+      %h1= @subgroup.title
+    
+    .col-sm-12
+      =raw @subgroup.description
+    .col-sm-12
+      - @subgroup.products.each do |product|
+        .product-box{:id => "product-" + product.id.to_s, :style => "float:right" }
+          %article.item
+            = link_to product, :class => "image fit" do            
+              - if product.photos.present?
+                = image_tag product.photos.first.image(:small)
+            %header
+              %h3= product.title_fa
+              %p= product.description
+              - if is_admin?
+                = link_to 'ویرایش', edit_product_path(product)
+                \|
+                = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            
+    .col-sm-12    
+      - if is_admin?
+        = link_to 'ویرایش', edit_subgroup_path(@subgroup)
+        \|
+        = link_to 'بازگشت', :back
