@@ -10,7 +10,7 @@
       .col-sm-4{:style => "overflow:hidden"}   
         = image_tag @photo.image(:medium)
       .col-sm-8.sub-pro-description
-        =raw @photo.description_fa
+        =raw @photo.description
     .col-sm-12
       - if is_admin?
         = link_to 'ویرایش', edit_photo_path(@photo)
