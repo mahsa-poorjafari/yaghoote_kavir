@@ -6,14 +6,19 @@
       = @product.description
     .col-sm-12
       - if @product.photos.present?
-        - @product.photos.each do |pic|
-          .col-sm-4
-            = image_tag pic.image(:medium), :alt => @product.title_fa + '_' + pic.image_file_name, :title => @product.title_fa + '_' + pic.description, :style => "width:100%"
-            = pic.description
-            = link_to 'ویرایش تصویر', edit_photo_path(pic)
-            \|
-            = link_to 'حذف تصویر', pic, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
-        .clear-float 
+        - @product.photos.offset(1).each do |pic|
+          .col-sm-12
+            .col-sm-4
+              = image_tag pic.image(:medium), :alt => @product.title_fa + '_' + pic.image_file_name, :title => @product.title_fa + '_' + pic.description, :style => "width:100%"
+            .col-sm-7
+              .sub-pro-description= pic.description
+            - if is_admin?
+              .col-sm-1
+                = link_to 'ویرایش تصویر', edit_photo_path(pic)
+                \|
+                = link_to 'حذف تصویر', pic, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+            .clear-float 
+          .clear-float 
     
   - if is_admin?
     = link_to 'ویرایش', edit_product_path(@product)

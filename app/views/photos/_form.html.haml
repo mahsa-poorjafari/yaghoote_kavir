@@ -5,16 +5,16 @@
       %ul
         - @photo.errors.each do |attr, msg|
           %li= msg
-
+  .field
+    = f.label 'محصول مربوطه'
+    = f.select(:product_id, Product.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' محصول را انتخاب کنید.') 
   .field
     = f.label 'تصویر:'
     = f.file_field :image
   .field
     = f.label 'توضیحات:'
-    = f.text_field :description
-  .field
-    = f.label 'محصول مربوطه'
-    = f.select(:product_id, Product.all.collect {|u| [u.title_fa, u.id]}, :prompt => ' محصول را انتخاب کنید.') 
+    = f.cktext_area :description
+  
     
   .actions
     = f.submit 'ثبت'
