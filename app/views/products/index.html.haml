@@ -22,13 +22,14 @@
                   = link_to product, :class => "image fit" do            
                     - if product.photos.present?
                       = image_tag product.photos.first.image(:small)
-                  %header
-                    %h3= product.title_fa
-                    %p=raw product.description_fa
-                    - if is_admin?
-                      = link_to 'ویرایش', edit_product_path(product)
-                      \|
-                      = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+                  -#
+                    %header
+                      %h3= product.title_fa
+                      %p=raw product.description_fa
+                      - if is_admin?
+                        = link_to 'ویرایش', edit_product_path(product)
+                        \|
+                        = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 .clear-float 
 
