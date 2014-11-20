@@ -16,21 +16,21 @@
       #Container
         - Category.all.each do |category|
           - category.subgroups.each do |subgroup|
-            - subgroup.products.each do |product|
-              -#
-                .mix.product-box{"data-my-order" => product.id, :class => "category-"+ product.category_id.to_s }
-                  %article.item
-                    = link_to product, :class => "image fit" do            
-                      - if product.photos.present?
-                        = image_tag product.photos.first.image(:small)
-                    
-                    %header
+            - subgroup.products.each do |product|              
+              .mix.product-box{"data-my-order" => product.id, :class => "category-" + product.subgroup.id.to_s }
+                %article.item
+                  = link_to product, :class => "image fit" do            
+                    - if product.photos.present?
+                      = image_tag product.photos.first.image(:small)
+                  %header
+                    - if product.title_fa.present?
                       %h3= product.title_fa
-                      %p=raw product.description_fa
-                      - if is_admin?
-                        = link_to 'ویرایش', edit_product_path(product)
-                        \|
-                        = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+                    
+                    - if is_admin?
+                      = link_to 'ویرایش', edit_product_path(product)
+                      \|
+                      = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا می خواهید این آیتم را حذف کنید؟' }
+            
 
 .clear-float 
 
