@@ -10,19 +10,20 @@
         .category_box
           .category-title{:id => ".category-" + category.id.to_s}
             = category.title_fa
-          - category.subgroups.each do |subgroup|
+          - category.subgroups.each do |subgroup|            
             .subgroups-title.filter{"data-filter" => ".category-" + category.id.to_s}= subgroup.title
         
       #Container
         - Category.all.each do |category|
           - category.subgroups.each do |subgroup|
             - subgroup.products.each do |product|
-              .mix.product-box{"data-my-order" => product.id, :class => "category-"+ product.category_id.to_s }
-                %article.item
-                  = link_to product, :class => "image fit" do            
-                    - if product.photos.present?
-                      = image_tag product.photos.first.image(:small)
-                  -#
+              -#
+                .mix.product-box{"data-my-order" => product.id, :class => "category-"+ product.category_id.to_s }
+                  %article.item
+                    = link_to product, :class => "image fit" do            
+                      - if product.photos.present?
+                        = image_tag product.photos.first.image(:small)
+                    
                     %header
                       %h3= product.title_fa
                       %p=raw product.description_fa
