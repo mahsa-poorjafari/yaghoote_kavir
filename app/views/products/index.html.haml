@@ -11,9 +11,9 @@
           .category-title{:id => ".category-" + category.id.to_s}
             = category.title_fa
           - category.subgroups.each do |subgroup|            
-            .subgroups-title.filter{"data-filter" => ".category-" + category.id.to_s}= subgroup.title
+            .subgroups-title.filter{"data-filter" => ".category-" + subgroup.id.to_s}= subgroup.title
         
-      #Container
+      #Container{:style => "width:100%"}
         - Category.all.each do |category|
           - category.subgroups.each do |subgroup|
             - subgroup.products.each do |product|              
