@@ -8,9 +8,8 @@
     = javascript_include_tag "jquery.mixitup"
     = csrf_meta_tags
 
-  %body
-    
-    .top-site#top
+  %body      
+    .top-site#top.one
       #date
         = JalaliDate.new(Date.today).strftime("%A %e %b %Y")
         |

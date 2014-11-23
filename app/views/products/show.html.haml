@@ -9,7 +9,7 @@
       - if @product.photos.present?
         - if @product.photos.offset(1).present?
           - @product.photos.offset(1).each do |pic|
-            .product-box  
+            .product-box.col-sm-3
               %article.item
                 = link_to pic, :class => "image fit" do            
                   = image_tag pic.image(:small), :alt => @product.title_fa + '_' + pic.title, :title => @product.title_fa + '_' + pic.title, :style => "width:100%"
