@@ -9,20 +9,22 @@
       - if @product.photos.present?
         - if @product.photos.offset(1).present?
           - @product.photos.offset(1).each do |pic|
-            = link_to pic do
-              .col-sm-4.sub-pro-box
-                .col-sm-12
-                  .sub-pro-title= pic.title
-                .col-sm-12.sub-pro-img
+            .product-box  
+              %article.item
+                = link_to pic, :class => "image fit" do            
                   = image_tag pic.image(:small), :alt => @product.title_fa + '_' + pic.title, :title => @product.title_fa + '_' + pic.title, :style => "width:100%"
-                
-                - if is_admin?
-                  .col-sm-12
-                    = link_to 'ویرایش ', edit_photo_path(pic)
+                %header                  
+                  %h3= pic.title
+                  
+                  - if is_admin?
+                    = link_to 'ویرایش', edit_photo_path(pic)
                     \|
-                    = link_to 'حذف', pic, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+                    = link_to 'حذف', pic, :method => :delete, :data => { :confirm => 'آیا می خواهید این آیتم را حذف کنید؟' }
+            
+
+            
                 
-            .clear-float 
+      .clear-float 
     
   - if is_admin?
     = link_to 'ویرایش', edit_product_path(@product)
