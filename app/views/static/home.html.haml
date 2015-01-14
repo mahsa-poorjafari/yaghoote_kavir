@@ -45,10 +45,8 @@
   .container
     %header
       %h2 تماس با ما
-    %p
-      جزئیات تماس و شامل شماره های تماس و ایمیل و آدرس در این قسمت قرار می گیرد.
-      %br
-      نقشه گوگل نیز در این قسمت نمایش داده خواهد شد.
+    - if @contact.present?
+      .contact-text= raw @contact.text
     .6u  
       = render 'shared/msg_form'
       
