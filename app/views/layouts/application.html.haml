@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= 'یاقوت کویر'
+    %title= 'یاقوت کویر فردوس' + '|' + Category.all.collect(&:title_fa).join("| ")+ Subgroup.all.collect(&:title).join("| ")  #{@head.fetch(:title, '') if @head}
 
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
