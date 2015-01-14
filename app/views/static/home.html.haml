@@ -47,8 +47,13 @@
       %h2 تماس با ما
     - if @contact.present?
       .contact-text= raw @contact.text
-    .6u  
-      = render 'shared/msg_form'
+    .12u  
+      .6u.pull-right  
+        = render 'shared/msg_form'
+      .6u.pull-left
+        .google-map
+          %iframe{:height => "580", :src => "https://mapsengine.google.com/map/embed?mid=zbDi3iZxywyM.khuldVe1WnAo&z=11", :width => "100%"}
+        
       
 :javascript
   $(function(){

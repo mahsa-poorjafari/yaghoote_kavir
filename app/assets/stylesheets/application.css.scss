@@ -178,3 +178,10 @@ position: relative;}
 .sub-pro-box:hover .sub-pro-img {background:#FFFF58; opacity:.8; cursor:pointer}
 .contact-text p{font-size:16px; margin: 0;
 text-align: justify;}
+.google-map {
+  background-image: url(image-path('yaghootekavir_map.png'));  
+  background-repeat:no-repeat;
+  width:95%; height:580px;
+  float:left;
+  text-align:left;
+}
