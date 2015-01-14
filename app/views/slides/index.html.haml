@@ -1,5 +1,6 @@
-%h1  اسلایدر
-
+%h1  تصاویر اسلایدر
+- if is_admin?
+  = link_to 'اسلاید جدید', new_slide_path, :class => "btn btn-default"
 %table
   %tr
     %th تصویر
@@ -13,9 +14,11 @@
       %td= image_tag slide.image(:small)
       %td
         = link_to 'مشاهده', slide
+        \|
         = link_to 'ویرایش', edit_slide_path(slide)
+        \|
         = link_to 'حذف', slide, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'اسلاید جدید', new_slide_path, :class => "btn btn-default"
+
+

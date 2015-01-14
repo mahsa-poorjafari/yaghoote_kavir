@@ -1,9 +1,11 @@
-%p#notice= notice
+- if notice.present?
+  .alert.alert-success= notice
+
 
 %p
-  %b Description:
+  %b توضیحات تصویر:
   = @slide.description
+%div= image_tag @slide.image(:geometry)
+- if is_admin?
+  = link_to 'ویرایش', edit_slide_path(@slide)
 
-= link_to 'Edit', edit_slide_path(@slide)
-\|
-= link_to 'Back', slides_path
