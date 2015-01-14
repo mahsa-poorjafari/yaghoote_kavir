@@ -1,4 +1,4 @@
-- if @page.title == "About us"
+- if @page.title == "درباره ما"
   / About Me
   %section#about.three
     .container
@@ -6,7 +6,7 @@
         %h2 درباره یاقوت کویر
       
       %div= raw @page.text
-- elsif @page.title == "Contact us"
+- elsif @page.title == "تماس با ما"
   / Contact
   %section#contact.four
     .container
@@ -16,8 +16,7 @@
       .6u  
         = render 'shared/msg_form'
 
-
-    .admin-links
-      = link_to 'ویرایش', edit_page_path(@page)
-      \|
-      = link_to 'بازگشت', :back
+    - if is_admin?
+      .admin-links
+        = link_to 'ویرایش', edit_page_path(@page)
+      
