@@ -4,8 +4,7 @@
   .container
     %header
       %h2 محصولات 
-    %p
-      توضیحات کلی در مورد محصولات در این قسمت قرار می گیرد.
+    
     .row{:style => "direction:rtl"}
       - Category.all.each do |category|
         .category_box
