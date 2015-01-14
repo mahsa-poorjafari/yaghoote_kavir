@@ -1,7 +1,7 @@
 # encoding: UTF-8
 class Slide < ActiveRecord::Base
   has_attached_file :image, :styles => { :small => "250x50",
-                                        :gallery_size => {:geometry => "1284X200#", :processors => [:jcropper]}}
+                                        :gallery_size => {:geometry => "1286X300#", :processors => [:jcropper]}}
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   def cropping?

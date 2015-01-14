@@ -7,10 +7,12 @@
 
   .field.fa
     = f.label 'انتخاب عکس'
+    - if @slide.image.present?
+      = image_tag @slide.image(:small)
     = f.file_field :image
   .field.fa
     = f.label 'توضیحات به فارسی:'
     = f.text_field :description_fa
   
   .actions
-    = f.submit 'Save'
+    = f.submit 'ثبت'
