@@ -33,13 +33,13 @@
       %li
         = link_to Gallery, :class => "skel-layers-ignoreHref ", :class => ('active' if current_page?(galleries_path)) do                
           %span.icon.fa-film گالری تصاویر
-      -@about = Page.find_by_title('About us')
+      -@about = Page.find_by_title('درباره ما')
       %li  
         = link_to @about , :class => ('active' if current_page?(@about)), :id => "about-link" do                 
-          %span.icon.fa-user= @about.title_fa
-      -@contact = Page.find_by_title('Contact us')
+          %span.icon.fa-user= @about.title
+      -@contact = Page.find_by_title('تماس با ما')
       %li  
         = link_to @contact , :class => ('active' if current_page?(@contact)), :id => "contact-link" do                 
-          %span.icon.fa-user= @contact.title_fa
+          %span.icon.fa-user= @contact.title
       
    
