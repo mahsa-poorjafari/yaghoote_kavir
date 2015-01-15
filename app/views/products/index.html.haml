@@ -27,9 +27,8 @@
                       %h3= product.title_fa
                     
                     - if is_admin?
-                      = link_to 'ویرایش', edit_product_path(product)
-                      \|
-                      = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا می خواهید این آیتم را حذف کنید؟' }
+                      = link_to 'ویرایش', edit_product_path(product), :class => "btn btn-info"                                          
+                      = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'آیا می خواهید این آیتم را حذف کنید؟' }, :class => "btn btn-danger"
             
 
 .clear-float 

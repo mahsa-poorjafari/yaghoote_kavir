@@ -7,13 +7,13 @@
           %li= msg
 
   .field
-    = f.label :title
+    = f.label :عنوان
     = f.text_field :title
   .field
-    = f.label :text
-    = f.text_area :text
+    = f.label :متن
+    = f.cktext_area :text
   .field
-    = f.label :author
+    = f.label :نویسنده
     = f.text_field :author
   .actions
-    = f.submit 'Save'
+    = f.submit 'ثبت'

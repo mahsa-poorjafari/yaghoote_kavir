@@ -9,10 +9,10 @@
           %span.icon.fa-th محصولات
       %li
         = link_to Article, :class => "skel-layers-ignoreHref" do                
-          %span.icon.fa-star مقالات
+          %span.icon.fa-star= ' مقالات' +' (' + Article.count.to_s + ')'
       %li
         = link_to Gallery, :class => "skel-layers-ignoreHref" do                
-          %span.icon.fa-film گالری تصاویر
+          %span.icon.fa-film= ' گالری تصاویر'+' (' + Gallery.count.to_s + ')'
       %li
         %a#about-link.skel-layers-ignoreHref{:href => "#about"}
           %span.icon.fa-user درباره ما
@@ -29,10 +29,10 @@
           %span.icon.fa-th محصولات
       %li
         = link_to Article, :class => "skel-layers-ignoreHref ", :class =>  ('active' if current_page?(articles_path) ) do                
-          %span.icon.fa-star مقالات
+          %span.icon.fa-star= ' مقالات' +' (' + Article.count.to_s + ')'
       %li
         = link_to Gallery, :class => "skel-layers-ignoreHref ", :class => ('active' if current_page?(galleries_path)) do                
-          %span.icon.fa-film گالری تصاویر
+          %span.icon.fa-film= ' گالری تصاویر'+' (' + Gallery.count.to_s + ')'
       -@about = Page.find_by_title('درباره ما')
       %li  
         = link_to @about , :class => ('active' if current_page?(@about)), :id => "about-link" do                 

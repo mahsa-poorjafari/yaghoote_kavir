@@ -1,3 +1,7 @@
+- if is_admin?      
+  = link_to 'ویرایش', edit_page_path(@page), :class => "btn btn-info"
+
+
 - if @page.title == "درباره ما"
   / About Me
   %section#about.three
@@ -10,12 +14,15 @@
   / Contact
   %section#contact.four
     .container
-      %header        
-      .6u= raw @page.text
-      .6u  
-        = render 'shared/msg_form'
+      %header   
+        %h2 اطلاعات تماس 
+      .contact-text= raw @page.text
+      .12u  
+        .6u.pull-right  
+          = render 'shared/msg_form'
+        .6u.pull-left
+          .google-map
+            %iframe{:height => "580", :src => "https://mapsengine.google.com/map/embed?mid=zbDi3iZxywyM.khuldVe1WnAo&z=11", :width => "100%"}
+        
 
-    - if is_admin?
-      .admin-links
-        = link_to 'ویرایش', edit_page_path(@page)
-      
+    

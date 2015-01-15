@@ -3,7 +3,7 @@
     %header
       %h1 لیست مقالات
       - if is_admin?
-        = link_to 'مقاله جدید', new_article_path, :class=> "submit"
+        = link_to 'افزودن مقاله جدید', new_article_path, :class=> "btn btn-default"
     .12u
       %table
         %tr
@@ -20,11 +20,11 @@
             %td= article.author
             - if is_admin?
               %td
-                = link_to 'مشاهده', article
-                \|
-                = link_to 'ویرایش', edit_article_path(article)
-                \|
-                = link_to 'حذف', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+                = link_to 'مشاهده', article, :class =>" btn btn-warning"
+                
+                = link_to 'ویرایش', edit_article_path(article), :class => "btn btn-info"  
+                
+                = link_to 'حذف', article, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
 
 
 
