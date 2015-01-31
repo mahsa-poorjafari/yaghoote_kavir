@@ -1,20 +1,24 @@
 %section#portfolio.two  
   .container
-    %header      
+    %header.col-sm-6
       %span= link_to @photo.product.subgroup.title , :controller => "subgroups", :action => "show", :id => @photo.product.subgroup.title             
       %span= ' / '
       - if @photo.product.title_fa.present?
         %span= link_to @photo.product.title_fa,  :controller => "products", :action => "show", :id => @photo.product.title_fa
       %h2= @photo.title 
-    .col-sm-12
-      .col-sm-12.sub-pro-description
-        =raw @photo.description
-      .col-sm-6{:style => "overflow:hidden"}   
-        = image_tag @photo.image(:medium)
-      .clear-float
+    .col-sm-6.pull-left{:style => "overflow:hidden"}   
+      = image_tag @photo.image(:small)
+    
+    .col-sm-12.sub-pro-description
+      =raw @photo.description
+    .col-sm-12  
+      - if @photo.second_img.present?
+        .col-sm-6.pull-right{:style => "overflow:hidden"}   
+          = image_tag @photo.second_img(:small)
+    .clear-float
       
     .col-sm-12
       - if is_admin?
-        = link_to 'ویرایش', edit_photo_path(@photo)
+        = link_to 'ویرایش', edit_photo_path(@photo), :class => "btn btn-info"                                          
         \|
         = link_to 'بازگشت', Product

@@ -17,6 +17,11 @@
       = image_tag @photo.image(:small)
     = f.file_field :image
   .field
+    = f.label 'تصویر دوم:'
+    - if @photo.second_img.present?
+      = image_tag @photo.second_img(:small)
+    = f.file_field :second_img
+  .field
     = f.label 'توضیحات:'
     = f.cktext_area :description
   

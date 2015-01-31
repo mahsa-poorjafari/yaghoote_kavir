@@ -239,7 +239,9 @@
         height: 150px;
         overflow: hidden;
       }
-
+      .image.fit img {position:absolute; height:100%; 
+        right: 10%;
+        left: 10%;}
       .image.featured
       {
         display: block;

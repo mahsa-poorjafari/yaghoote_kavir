@@ -25,9 +25,9 @@
             - if is_admin?
               = link_to 'مشاهده', photo
               \|
-              = link_to 'ویرایش', edit_photo_path(photo)
+              = link_to 'ویرایش', edit_photo_path(photo), :class => "btn btn-info"                                          
               \|
-              = link_to 'حذف', photo, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }
+              = link_to 'حذف', photo, :method => :delete, :data => { :confirm => 'آیا مطمئن هستید؟' }, :class => "btn btn-danger"
 
 
 

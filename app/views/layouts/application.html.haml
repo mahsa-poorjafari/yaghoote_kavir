@@ -1,12 +1,25 @@
 !!!
 %html
   %head
-    %title= 'یاقوت کویر فردوس' + '|' + Category.all.collect(&:title_fa).join("| ")+ Subgroup.all.collect(&:title).join("| ")  #{@head.fetch(:title, '') if @head}
+    %title= 'شرکت خدمات کشاورزی یاقوت کویر' + '|' + Category.all.collect(&:title_fa).join("| ")+ Subgroup.all.collect(&:title).join("| ")  #{@head.fetch(:title, '') if @head}
 
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "jquery.mixitup"
     = csrf_meta_tags
+    %meta{:charset => "utf-8"}    
+    %meta{:name => "keywords", :content =>  Category.all.collect(&:title_fa).join("| ")+ Subgroup.all.collect(&:title).join("| ")}
+    %meta{:name => "robots", :content => "NoIndex,follow"}
+    %meta{:name => "googlebot", :content => "noarchive"}
+    %meta{:name => "slurp", :content => "NoIndex,follow"}
+    %meta{:name => "msnbot", :content => "NoIndex,follow"}
+    %meta{:name => "teoma", :content => "NoIndex,follow"}
+    %meta{:name => "description", :content =>" 'شرکت خدمات کشاورزی یاقوت کویر', 'Yaghoot Kavir', 'یاقوت کویر'" + Category.all.collect(&:title_fa).join("| ")+ Subgroup.all.collect(&:title).join("| ")}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:content => "8ana4hAqdsH47iRKOF8mRJ50NCHxxcp9G58sWpS4w_g", :name => "google-site-verification"}/
+    = yield(:refresh_meta) if content_for?(:refresh_meta)
+    = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png', :title => "آژانس هواپیمایی رادان سیر"
+    
     %meta{:content => "vJZFHZZv2godWYuMNUYVNLPm-gwBw7woUcLODGfSdpA", :name => "google-site-verification"}/
 
   %body      
@@ -48,7 +61,7 @@
     #footer
       / Copyright
       %ul.copyright
-        %li © تمامی حقوق مادی و معنوی این وب سایت متعلق به شرکت یاقوت کویر می باشد.
+        %li © تمامی حقوق مادی و معنوی این وب سایت متعلق به شرکت خدمات کشاورزی یاقوت کویر می باشد.
         %li
           Design and Develop:
           Raush.net

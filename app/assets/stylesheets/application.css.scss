@@ -87,7 +87,7 @@ right:0;
 }
 article.item:hover a.image img{opacity:.7;
 filter: alpha(opacity=70); /* For IE8 and earlier */
-position:relative}
+}
 article.item a.image img.link-icon{display:none; width:50px; height:50px;
  position:absolute; top:40%;
  right:40%;
@@ -174,6 +174,10 @@ width:22%;
 position: relative;}
 .sub-pro-box {position:relative; height:450px; overflow:hidden}
 .sub-pro-description {text-align:justify; font-size:18px}
+.sub-pro-description p{text-align:justify; font-size:18px}
+.sub-pro-description table {border: 2px solid #fff}
+.sub-pro-description table tr{border: 2px solid #fff}
+.sub-pro-description table tr td{border: 2px solid #fff; directory:rtl; text-align:center}
 .sub-pro-title {text-align:center; }
 .sub-pro-img {border:#4D4D4D solid 1px; border-radius:5px; background:#fff }
 .sub-pro-box:hover .sub-pro-img {background:#FFFF58; opacity:.8; cursor:pointer}

@@ -17,12 +17,12 @@
               %h3= product.title_fa
               %p= product.description_fa
               - if is_admin?
-                = link_to 'ویرایش', edit_product_path(product)
+                = link_to 'ویرایش', edit_product_path(product), :class => "btn btn-info"  
                 \|
-                = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+                = link_to 'حذف', product, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
             
     .col-sm-12    
       - if is_admin?
-        = link_to 'ویرایش', edit_subgroup_path(@subgroup)
+        = link_to 'ویرایش صفحه', edit_subgroup_path(@subgroup), :class => "btn btn-info"  
         \|
         = link_to 'بازگشت', :back
