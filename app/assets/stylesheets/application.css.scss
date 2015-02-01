@@ -193,3 +193,8 @@ text-align: justify;}
   text-align:left;
 }
 .image.fit img.product-in-home-page {height:auto; width:80%}
+@media screen and (max-device-width: 480px) {
+  .category-title{
+    color:red;
+  }
+}
