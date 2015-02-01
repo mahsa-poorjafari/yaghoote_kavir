@@ -19,9 +19,9 @@
             - subgroup.products.each do |product|
               .mix.product-box{"data-my-order" => product.id, :class => "category-" + product.subgroup.id.to_s }
                 %article.item
-                  = link_to product, :class => "image fit" do            
+                  = link_to product, :class => "image fit " do            
                     - if product.photos.present?
-                      = image_tag product.photos.first.image(:small)
+                      = image_tag product.photos.first.image(:small), :class => "product-in-home-page"
                   %header
                     - if product.title_fa.present?
                       %h3= product.title_fa
