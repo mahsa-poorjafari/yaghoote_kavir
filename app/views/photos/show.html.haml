@@ -12,9 +12,8 @@
     .col-sm-12.sub-pro-description
       =raw @photo.description
     .col-sm-12  
-      - if @photo.second_img.present?
-        .col-sm-6.pull-right{:style => "overflow:hidden"}   
-          = image_tag @photo.second_img(:small)
+      - if @photo.second_img.present?        
+        = image_tag @photo.second_img(:original)
     .clear-float
       
     .col-sm-12
