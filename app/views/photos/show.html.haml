@@ -14,6 +14,10 @@
     .col-sm-12  
       - if @photo.second_img.present?        
         = image_tag @photo.second_img(:original)
+        %p
+          = link_to @photo.second_img.url, :target => "blank" do
+            %i= 'دریافت فایل  تصویر'
+          
     .clear-float
       
     .col-sm-12
