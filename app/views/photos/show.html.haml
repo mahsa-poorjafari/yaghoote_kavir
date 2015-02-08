@@ -13,7 +13,7 @@
       =raw @photo.description
     .col-sm-12  
       - if @photo.second_img.present?        
-        = image_tag @photo.second_img(:original)
+        = image_tag @photo.second_img(:medium)
         %p
           = link_to @photo.second_img.url, :target => "blank" do
             %i= 'دریافت فایل  تصویر'
