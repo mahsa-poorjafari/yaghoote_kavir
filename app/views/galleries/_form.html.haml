@@ -7,6 +7,9 @@
           %li= msg
 
   .field
+    = f.label 'گروه گالری را انتخاب کنید'
+    = f.select(:gallery_group_id, GalleryGroup.all.collect {|u| [u.title, u.id]}, :prompt => ' دسته گالری تصاویر.') 
+  .field
     = f.label :عنوان 
     = f.text_field :title
   .field

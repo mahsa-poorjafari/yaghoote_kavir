@@ -17,7 +17,7 @@
           - @product.photos.offset(1).each do |pic|
             .product-box
               %article.item
-                = link_to pic, :class => "image fit" do            
+                = link_to pic, :class => "image fit-heigh" do            
                   = image_tag pic.image(:small), :alt => @product.title_fa + '_' + pic.title, :title => @product.title_fa + '_' + pic.title
                 %header                  
                   %h3= pic.title

@@ -3,15 +3,18 @@
     %header
       %h1 گالری تصاویر
       - if is_admin?
+        = link_to 'تعریف گروه برای گالری', new_gallery_group_path, :class=> "btn btn-default"
         = link_to 'افزودن تصویر به گالری', new_gallery_path, :class=> "btn btn-default"
     .12u
-      - @galleries.each do |gallery|
-        .4u
-          = gallery.title
+      - @gallery_groups.each do |group|
+        .4u.gallery_group_box
+          = link_to group do          
+            %h5= group.title
+            = image_tag group.galleries.first.photo(:small)
           - if is_admin?              
-            = link_to 'مشاهده', gallery, :class =>" btn btn-warning"
+            = link_to 'مشاهده', group, :class =>" btn btn-warning"
             
-            = link_to 'ویرایش', edit_gallery_path(gallery), :class => "btn btn-info"  
+            = link_to 'ویرایش', edit_gallery_group_path(group), :class => "btn btn-info"  
             
-            = link_to 'حذف', gallery, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
+            = link_to 'حذف', group, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
 

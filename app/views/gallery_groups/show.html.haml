@@ -1,0 +1,25 @@
+%section#portfolio.two  
+  .container
+    %header
+      %h1= link_to 'گالری تصاویر',Gallery
+      %h1= @gallery_group.title
+      - if is_admin?
+        = link_to 'ویرایش', edit_gallery_group_path(@gallery_group)
+        \|
+        = link_to 'بازگشت', gallery_groups_path
+
+    %p#notice= notice
+    .12u
+      - @gallery_group.galleries.each do |gallery_pic|
+        .4u.gallery_group_box
+          = link_to gallery_pic do
+            %h5= gallery_pic.title
+            = image_tag gallery_pic.photo(:small)
+          - if is_admin?
+            = link_to 'مشاهده', gallery_pic, :class =>" btn btn-warning"
+            
+            = link_to 'ویرایش', edit_gallery_path(gallery_pic), :class => "btn btn-info"  
+            
+            = link_to 'حذف', gallery_pic, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
+
+       

@@ -1,0 +1,13 @@
+= form_for @gallery_group do |f|
+  - if @gallery_group.errors.any?
+    #error_explanation
+      
+      %ul
+        - @gallery_group.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label 'عنوان گروه را وارد نمایید:'
+    = f.text_field :title
+  .actions
+    = f.submit 'ثبت'

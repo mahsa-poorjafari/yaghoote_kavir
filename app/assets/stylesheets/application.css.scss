@@ -35,7 +35,7 @@ li.admin-menu:hover a{color:#FFFFFF}
 .admin-edit-del {position: absolute; top:0;  background:#E5E5E5; color:#000; left:0}
 .set-center {margin-right:auto; margin-left:auto}
 
-section#slide {height:290px;
+section#slide {height:400px;
 position:relative;
 top: 7%;
 width: 100%;
@@ -198,3 +198,11 @@ text-align: justify;}
     color:red;
   }
 }
+.gallery_group_box {float:right; border:2px #BFBFBF solid; border-radius:9px; 
+  margin:1%; overflow:hidden;
+  text-align:center; padding:.5%
+  }
+
+.gallery_group_box:hover {cursor:pointer; border:2px #FFA500 solid;}
+.gallery_group_box a:hover {text-decoration:none}
+.gallery_group_box:hover h5 {background:#1A1A1A; opacity:.8; color:#fff}

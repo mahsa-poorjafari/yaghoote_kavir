@@ -1,12 +1,14 @@
-%p#notice= notice
 
-%p
-  %b Title:
-  = @gallery.title
-%p
-  %b Description:
-  = @gallery.description
+%section  
+  .container  
+    %header
+      %h1= @gallery.title 
+    %p#notice= notice
 
-= link_to 'Edit', edit_gallery_path(@gallery)
-\|
-= link_to 'Back', galleries_path
+  = link_to (image_tag @gallery.photo(:medium)), @gallery.photo(:original), :target => "_blank"
+  %p  
+    = @gallery.description
+  - if is_admin?
+    = link_to 'ویرایش', edit_gallery_path(@gallery)
+    \|
+    = link_to 'بازگشت', galleries_path

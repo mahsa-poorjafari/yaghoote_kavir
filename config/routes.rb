@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :gallery_groups
+
   resources :subgroups
 
   resources :galleries

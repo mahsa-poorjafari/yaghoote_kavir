@@ -241,6 +241,9 @@
       }
       .image.fit img {position:absolute; width:100%; 
         }
+      .image.fit-heigh   img {position:absolute; height:100%; 
+        right:0; left:0; top:0;
+        }
       .image.featured
       {
         display: block;
@@ -570,7 +573,7 @@
     {
       position: absolute;
       left: 0;
-      top: 40%;
+      top: 53%;
 
       width: 100%;
     }

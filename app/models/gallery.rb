@@ -4,6 +4,6 @@ class Gallery < ActiveRecord::Base
   validates_attachment :photo, 
     :content_type => { :content_type => ["image/jpg", "image/jpeg", "image/png"], :message => "فرمت عکس صحیح می باشد." },
     :size => { :in => 0..300.kilobytes , :message => "حجم تصویر بیشتر از 300 کیلوبایت است."}
-  
+  belongs_to :gallery_group
 
 end
