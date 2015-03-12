@@ -1,18 +1,20 @@
-%p#notice= notice
+%section#portfolio.two  
+  .container
+    %header
+      %h1 پیام ارسالی
 
-%p
-  %b Name:
-  = @message.name
-%p
-  %b Email:
-  = @message.email
-%p
-  %b Phone number:
-  = @message.phone_number
-%p
-  %b Text:
-  = @message.text
 
-= link_to 'Edit', edit_message_path(@message)
-\|
-= link_to 'Back', messages_path
+    %p
+      %b نام فرستنده
+      = @message.name
+    %p
+      %b ایمیل فرستنده
+      = @message.email
+    %p
+      %b تلفن تماس فرستنده
+      = @message.phone_number
+    %p
+      %b پیام
+      = @message.text
+
+   

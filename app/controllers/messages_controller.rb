@@ -26,8 +26,6 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-
-    
     if @message.save
       flash[:SendMsg] = 'کاربر گرامی پیام شما ارسال گردید.'
       UserMailer.send_msg_user.deliver

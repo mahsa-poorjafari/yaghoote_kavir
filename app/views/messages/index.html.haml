@@ -1,25 +1,30 @@
-%h1 Listing messages
+%section#portfolio.two  
+  .container
+    %header
+      %h1 لیست پیام های ارسالی
+      
+    .12u
+      %table
+        %tr
+          %th ردیف
+          %th نام فرستنده
+          %th ایمیل فرستنده
+          %th تلفن فرستنده
+          %th پیام
+          %th عملیات
 
-%table
-  %tr
-    %th Name
-    %th Email
-    %th Phone number
-    %th Text
-    %th
-    %th
-    %th
 
-  - @messages.each do |message|
-    %tr
-      %td= message.name
-      %td= message.email
-      %td= message.phone_number
-      %td= message.text
-      %td= link_to 'Show', message
-      %td= link_to 'Edit', edit_message_path(message)
-      %td= link_to 'Destroy', message, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Message', new_message_path
+        - @messages.each_with_index do |message, i|
+          %tr
+            %td= (i+1)
+            %td= message.name
+            %td= message.email
+            %td= message.phone_number
+            %td= message.text
+            %td              
+              = link_to 'مشاهده', message            
+              \|  
+              = link_to 'حذف', message, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
